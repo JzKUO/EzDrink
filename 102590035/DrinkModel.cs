@@ -38,13 +38,7 @@ namespace EzDrink
         {
             Drink drink = drinks[drinkIndex];
             Order foundOrder = null;
-            foreach (Order order in orders)
-            {
-                if (order.GetDrink().Equals(drink))
-                {
-                    foundOrder = order;
-                }
-            }
+            FoundOrder(drink, ref foundOrder);
             if (foundOrder == null)
             {
                 Order order = new Order(drink);
@@ -53,6 +47,18 @@ namespace EzDrink
             else
             {
                 foundOrder.Increase();
+            }
+        }
+
+        // find if drink already exist in order
+        private void FoundOrder(Drink drink, ref Order foundOrder)
+        {
+            foreach (Order order in orders)
+            {
+                if (order.GetDrink().Equals(drink))
+                {
+                    foundOrder = order;
+                }
             }
         }
 

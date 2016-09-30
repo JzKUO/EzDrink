@@ -212,18 +212,6 @@
             </Smell>
             <Smell>
               <Id>3</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.DrinkModel.BuyDrink.21int drinkIndex;</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>21</Weight>
-              <Project>102590035</Project>
-              <File>DrinkModel.cs</File>
-              <Line>37</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
               <SmellType>ICS(空白與空行-3)</SmellType>
               <HashCode>SpacingAndNewLine3</HashCode>
               <Severity>Red</Severity>
@@ -287,7 +275,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>485</ProductionLoc>
+          <ProductionLoc>491</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

@@ -28,17 +28,9 @@ namespace EzDrink
         // Add drink order event handler
         private void ClickDrinkMenuCell(object sender, DataGridViewCellEventArgs e)
         {
-            int existIndex = -1;
-
             if (IsButton(e.ColumnIndex))
             {
-                //Drink
-                if (IsAlreadyExist(e.RowIndex, ref existIndex))
-                {
-                    SumDrinkPrice(e.RowIndex, existIndex);
-                }
-                else
-                    AddNewOrder(e.RowIndex);
+                ClearOrderView();
             }
         }
 
@@ -48,6 +40,7 @@ namespace EzDrink
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
             {
                 _drinkMenu.Rows.Add(new object[] { BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
+                _drinkOrdered.Rows.Add(new object[] { drink.GetName(), drink.GetPrice() });
             }
         }
 
@@ -57,43 +50,10 @@ namespace EzDrink
             return clickColumnIndex == 0;
         }
 
-        // check if drink is already exist in ordered list
-        private bool IsAlreadyExist(int clickRowIndex, ref int existIndex)
+        private void ClearOrderView()
         {
-            foreach (DataGridViewRow row in _drinkOrdered.Rows)
-            {
-                if (row.Cells[0].Value.ToString() == _drinkMenu.Rows[clickRowIndex].Cells[1].Value.ToString())
-                {
-                    existIndex = row.Index;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        // sum drink price in ordered list
-        private void SumDrinkPrice(int clickRowIndex, int existIndex)
-        {
-            _drinkOrdered.Rows[existIndex].Cells[ORDER_PRICE_COLUMN_INDEX].Value = int.Parse(_drinkOrdered.Rows[existIndex].Cells[ORDER_PRICE_COLUMN_INDEX].Value.ToString()) + int.Parse(_drinkMenu.Rows[clickRowIndex].Cells[DRINK_PRICE_COLUMN_INDEX].Value.ToString());
-        }
-
-        // add drink to ordered list
-        private void AddNewOrder(int clickRowIndex)
-        {
-            _drinkOrdered.Rows.Add(new object[] { _drinkMenu.Rows[clickRowIndex].Cells[DRINK_NAME_COLUMN_INDEX].Value.ToString(), int.Parse(_drinkMenu.Rows[clickRowIndex].Cells[DRINK_PRICE_COLUMN_INDEX].Value.ToString()) });
-        }
-
-        // return drink menu row
-        public object[] ReturnMenuItem(int count)
-        {
-            return;
-        }
-
-        // get menu total drink items
-        public int GetTotalMenuItemsCount()
-        {
-            return _names.Length;
+            _drinkOrdered.Rows.Clear();
+            //_drinkOrdered.Refresh();
         }
     }
 }

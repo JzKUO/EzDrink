@@ -5,8 +5,8 @@ namespace EzDrink
 {
     public class DrinkModel
     {
-        private List<Drink> drinks;
-        private List<Order> orders;
+        private List<Drink> _drinks;
+        private List<Order> _orders;
         private readonly string[] _names = { "茉莉綠茶", "阿薩姆紅茶", "高山清茶", "鐵觀音", "烏龍清茶" };
         private readonly int[] _prices = { 20, 25, 40, 50, 30 };
 
@@ -19,30 +19,30 @@ namespace EzDrink
         // Initialize orders list
         private void InitializeOrders()
         {
-            orders = new List<Order>();
+            _orders = new List<Order>();
         }
 
         // Initailize drink list
         private void InitializeDrinks()
         {
-            drinks = new List<Drink>();
+            _drinks = new List<Drink>();
             for (int i = 0; i < _names.Length; i++)
             {
                 Drink drink = new Drink(_names[i], _prices[i]);
-                drinks.Add(drink);
+                _drinks.Add(drink);
             }
         }
 
         // add one drink
         public void BuyDrink(int drinkIndex)
         {
-            Drink drink = drinks[drinkIndex];
+            Drink drink = _drinks[drinkIndex];
             Order foundOrder = null;
             FoundOrder(drink, ref foundOrder);
             if (foundOrder == null)
             {
                 Order order = new Order(drink);
-                orders.Add(order);
+                _orders.Add(order);
             }
             else
             {
@@ -53,7 +53,7 @@ namespace EzDrink
         // find if drink already exist in order
         private void FoundOrder(Drink drink, ref Order foundOrder)
         {
-            foreach (Order order in orders)
+            foreach (Order order in _orders)
             {
                 if (order.GetDrink().Equals(drink))
                 {
@@ -65,13 +65,13 @@ namespace EzDrink
         // get all drinks in menu
         public List<Drink> GetDrinks()
         {
-            return drinks;
+            return _drinks;
         }
 
         // get all drinks in order
         public List<Order> GetOrders()
         {
-            return orders;
+            return _orders;
         }
     }
 }

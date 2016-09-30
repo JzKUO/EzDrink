@@ -185,44 +185,7 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.DrinkModel.drinks</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>EzDrink</Project>
-              <File>DrinkModel.cs</File>
-              <Line>8</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.DrinkModel.orders</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>EzDrink</Project>
-              <File>DrinkModel.cs</File>
-              <Line>9</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>ICS(空白與空行-3)</SmellType>
-              <HashCode>SpacingAndNewLine3</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>EzDrink</Project>
-              <File>EzDrinkForm.cs</File>
-              <Line>67</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList>
             <string>SpacingAndNewLine17.DrinkModel.cs.2.        }.    }</string>
           </HashCodeIgnoreList>

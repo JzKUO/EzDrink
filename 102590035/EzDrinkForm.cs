@@ -64,7 +64,7 @@ namespace EzDrink
         {
             foreach (Order order in _ezDrinkModel.GetOrders())
             {
-                if(order.GetCount() != 0)
+                if (order.GetCount() != 0)
                 {
                     _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice() });
                 }

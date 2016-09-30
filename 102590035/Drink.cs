@@ -18,11 +18,13 @@ namespace EzDrink
             this._price = price;
         }
 
+        // get drink name
         public String GetName()
         {
             return _name;
         }
 
+        // get drink price
         public int GetPrice()
         {
             return _price;

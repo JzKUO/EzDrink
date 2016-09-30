@@ -16,6 +16,7 @@ namespace EzDrink
             InitializeOrders();
         }
 
+        // Initialize orders list
         private void InitializeOrders()
         {
             orders = new List<Order>();
@@ -25,18 +26,21 @@ namespace EzDrink
         private void InitializeDrinks()
         {
             drinks = new List<Drink>();
-            for (int i = 0; i < _names.Length; i++) {
+            for (int i = 0; i < _names.Length; i++)
+            {
                 Drink drink = new Drink(_names[i], _prices[i]);
                 drinks.Add(drink);
             }
         }
 
-        public void BuyDrink(Drink drink)
+        // add one drink
+        public void BuyDrink(int drinkIndex)
         {
+            Drink drink = drinks[drinkIndex];
             Order foundOrder = null;
-            foreach(Order order in orders)
+            foreach (Order order in orders)
             {
-                if(order.GetDrink().Equals(drink))
+                if (order.GetDrink().Equals(drink))
                 {
                     foundOrder = order;
                 }
@@ -45,15 +49,23 @@ namespace EzDrink
             {
                 Order order = new Order(drink);
                 orders.Add(order);
-            } else
+            }
+            else
             {
                 foundOrder.Increase();
             }
         }
 
+        // get all drinks in menu
         public List<Drink> GetDrinks()
         {
             return drinks;
+        }
+
+        // get all drinks in order
+        public List<Order> GetOrders()
+        {
+            return orders;
         }
     }
 }

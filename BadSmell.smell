@@ -192,7 +192,7 @@
               <HashCode>Variable1.DrinkModel.drinks</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>102590035</Project>
+              <Project>EzDrink</Project>
               <File>DrinkModel.cs</File>
               <Line>8</Line>
               <Comment />
@@ -204,7 +204,7 @@
               <HashCode>Variable1.DrinkModel.orders</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>102590035</Project>
+              <Project>EzDrink</Project>
               <File>DrinkModel.cs</File>
               <Line>9</Line>
               <Comment />
@@ -216,7 +216,7 @@
               <HashCode>SpacingAndNewLine3</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>102590035</Project>
+              <Project>EzDrink</Project>
               <File>EzDrinkForm.cs</File>
               <Line>67</Line>
               <Comment />
@@ -230,47 +230,47 @@
             <AnalysisFiles>
               <AnalysisFile>
                 <RelativePath>Drink.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>DrinkModel.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>EzDrinkForm.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>EzDrinkForm.Designer.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Order.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Program.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\Resources.Designer.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\Settings.Designer.cs</RelativePath>
-                <ProjectName>102590035</ProjectName>
+                <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>

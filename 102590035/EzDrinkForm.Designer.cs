@@ -83,7 +83,7 @@ namespace EzDrink
             this._groupBox3.Controls.Add(this._drinkAdditions);
             this._groupBox3.Location = new System.Drawing.Point(279, 6);
             this._groupBox3.Name = "_groupBox3";
-            this._groupBox3.Size = new System.Drawing.Size(260, 277);
+            this._groupBox3.Size = new System.Drawing.Size(260, 280);
             this._groupBox3.TabIndex = 1;
             this._groupBox3.TabStop = false;
             this._groupBox3.Text = "groupBox1";
@@ -100,7 +100,7 @@ namespace EzDrink
             this.additionButton,
             this.additionName,
             this.additionPrice});
-            this._drinkAdditions.Location = new System.Drawing.Point(3, 18);
+            this._drinkAdditions.Location = new System.Drawing.Point(2, 21);
             this._drinkAdditions.Name = "_drinkAdditions";
             this._drinkAdditions.ReadOnly = true;
             this._drinkAdditions.RowHeadersVisible = false;

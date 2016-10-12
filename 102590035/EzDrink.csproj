@@ -50,13 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drink.cs" />
+    <Compile Include="DrinkAddition.cs" />
     <Compile Include="EzDrinkForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EzDrinkForm.Designer.cs">
       <DependentUpon>EzDrinkForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DrinkModel.cs" />
+    <Compile Include="EzDrinkModel.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

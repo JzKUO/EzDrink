@@ -14,7 +14,7 @@ namespace EzDrink
         [STAThread]
         static void Main()
         {
-            DrinkModel ezDrinkModel = new DrinkModel();
+            EzDrinkModel ezDrinkModel = new EzDrinkModel();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

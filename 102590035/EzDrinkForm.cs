@@ -18,12 +18,26 @@ namespace EzDrink
         public const int ORDER_NAME_COLUMN_INDEX = 0;
         public const int ORDER_PRICE_COLUMN_INDEX = 1;
         private const string BUTTON_TEXT = "選擇";
-        private DrinkModel _ezDrinkModel;
+        private EzDrinkModel _ezDrinkModel;
 
-        public EzDrinkForm(DrinkModel ezDrinkModel)
+        public EzDrinkForm(EzDrinkModel ezDrinkModel)
         {
             this._ezDrinkModel = ezDrinkModel;
             InitializeComponent();
+        }
+
+        // Form initialize event handler
+        private void LoadForm(object sender, EventArgs e)
+        {
+            foreach (Drink drink in _ezDrinkModel.GetDrinks())
+            {
+                _drinkMenu.Rows.Add(new object[] { BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
+            }
+
+            foreach (DrinkAddition drinkAddition in _ezDrinkModel.GetDrinkAdditions())
+            {
+                _drinkAdditions.Rows.Add(new object[] { BUTTON_TEXT, drinkAddition.GetName(), drinkAddition.GetPrice() });
+            }
         }
 
         // Add drink order event handler
@@ -34,15 +48,6 @@ namespace EzDrink
                 ClearOrderView();
                 _ezDrinkModel.BuyDrink(e.RowIndex);
                 ProduceOrder();
-            }
-        }
-
-        // Form initialize event handler
-        private void LoadForm(object sender, EventArgs e)
-        {
-            foreach (Drink drink in _ezDrinkModel.GetDrinks())
-            {
-                _drinkMenu.Rows.Add(new object[] { BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
             }
         }
 

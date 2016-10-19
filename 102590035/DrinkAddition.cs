@@ -10,12 +10,19 @@ namespace EzDrink
     {
         private string _name;
         private int _price;
+        private bool _isAdded;
 
         // Initialize drinkAddition
         public DrinkAddition(string name, int price)
         {
             this._name = name;
             this._price = price;
+            this._isAdded = false;
+        }
+
+        public DrinkAddition GetAddition()
+        {
+            return this;
         }
 
         // get drinkAddition name
@@ -28,6 +35,16 @@ namespace EzDrink
         public int GetPrice()
         {
             return _price;
+        }
+
+        public bool GetIsAdded()
+        {
+            return _isAdded;
+        }
+
+        public void DisableAddAddition()
+        {
+            _isAdded = true;
         }
     }
 }

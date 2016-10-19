@@ -12,6 +12,7 @@ namespace EzDrink
         private readonly string[] _additionNames = { "珍珠", "椰果", "仙草", "布丁" };
         private readonly int[] _drinkPrices = { 20, 25, 40, 50, 30 };
         private readonly int[] _additionPrices = { 5, 5, 10, 10 };
+        private int _selectedOrderedDrinkRowIndex;
 
         public EzDrinkModel()
         {
@@ -24,6 +25,7 @@ namespace EzDrink
         private void InitializeOrders()
         {
             _orders = new List<Order>();
+            _selectedOrderedDrinkRowIndex = 0;
         }
 
         // Initailize drink list
@@ -48,25 +50,32 @@ namespace EzDrink
             }
         }
 
-        // add one drink
-        public void BuyDrink(int drinkIndex)
+        // remove drink from order
+        public void RemoveOrderedDrink(int rowIndex)
         {
-            Drink drink = _drinks[drinkIndex];
-            Order foundOrder = null;
-            FoundOrder(drink, ref foundOrder);
-            if (foundOrder == null)
+            Order order = _orders[rowIndex];
+            _orders.Remove(order);
+        }
+
+        // add one drink
+        public void BuyDrink(int rowIndex)
+        {
+            Drink drink = _drinks[rowIndex];
+            Order foundInOrder = null;
+            FoundInOrder(drink, ref foundInOrder);
+            if (foundInOrder == null)
             {
                 Order order = new Order(drink);
                 _orders.Add(order);
             }
             else
             {
-                foundOrder.Increase();
+                foundInOrder.Increase();
             }
         }
 
         // find if drink already exist in order
-        private void FoundOrder(Drink drink, ref Order foundOrder)
+        private void FoundInOrder(Drink drink, ref Order foundOrder)
         {
             foreach (Order order in _orders)
             {

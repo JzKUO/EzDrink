@@ -197,7 +197,7 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>DrinkModel.cs</RelativePath>
+                <RelativePath>DrinkAddition.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -210,6 +210,11 @@
                 <RelativePath>EzDrinkForm.Designer.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>EzDrinkModel.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Order.cs</RelativePath>
@@ -238,7 +243,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>491</ProductionLoc>
+          <ProductionLoc>619</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

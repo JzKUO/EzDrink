@@ -10,11 +10,29 @@ namespace EzDrink
     {
         private Drink _drink;
         private int _count;
+        private string _sugariness;
+        private string _iceLevel;
+        private List<DrinkAddition> _additions;
 
+        // 冰度
+        public string REGULAR_ICE = "正常";
+        public string EASY_ICE = "少冰";
+        public string ICE_FREE = "去冰";
+        public string WARM = "溫熱";
+        // 甜度
+        public string REGULAR_SUGAR = "正常";
+        public string HALF_SUGAR = "半糖";
+        public string QUARTER_SUGAR = "微糖";
+        public string SUGAR_FREE = "無糖";
+
+        // initial order
         public Order(Drink drink)
         {
             _drink = drink;
             _count = 1;
+            _sugariness = REGULAR_ICE;
+            _iceLevel = REGULAR_SUGAR;
+            _additions = new List<DrinkAddition>();
         }
 
         // get drink data in order
@@ -29,10 +47,28 @@ namespace EzDrink
             return _drink.GetName();
         }
 
+        // get ordered drink sugarness
+        public string GetSugarness()
+        {
+            return _sugariness;
+        }
+
+        // get ordered drink ice level
+        public string GetIceLevel()
+        {
+            return _iceLevel;
+        }
+
         // get drink count in order
         public int GetCount()
         {
             return _count;
+        }
+
+        // get ordered drink additions
+        public List<DrinkAddition> GetAdditions()
+        {
+            return _additions;
         }
 
         // increase drink count in order
@@ -44,7 +80,17 @@ namespace EzDrink
         // get drink price sum
         public int GetTotalPrice()
         {
-            return _drink.GetPrice() * _count;
+            int additionPrice = 0;
+
+            foreach (DrinkAddition addition in _additions)
+            {
+                if (addition.GetAddition().Equals(addition))
+                {
+                    additionPrice += addition.GetPrice();
+                }
+            }
+
+            return (_drink.GetPrice() * _count) + additionPrice;
         }
     }
 }

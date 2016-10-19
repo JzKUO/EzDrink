@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C625C80C-05E0-4A6A-AA74-464B79F35BB4}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EzDrink</RootNamespace>
     <AssemblyName>102590035</AssemblyName>
@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="EzDrinkModel.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="PresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EzDrinkForm.resx">

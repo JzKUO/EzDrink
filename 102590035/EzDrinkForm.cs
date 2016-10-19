@@ -19,7 +19,7 @@ namespace EzDrink
         public const int DRINK_PRICE_COLUMN_INDEX = 2;
         public const int ORDER_NAME_COLUMN_INDEX = 0;
         public const int ORDER_PRICE_COLUMN_INDEX = 1;
-        public const int ORDER_SUGARNESS_COLUMN_INDEX = 2;
+        public const int ORDER_SUGAR_COLUMN_INDEX = 2;
         public const int ORDER_ICE_COLUMN_INDEX = 3;
         public const int ORDER_ADDITION_COLUMN_INDEX = 4;
         public const int ORDER_DELETE_COLUMN_INDEX = 5;
@@ -77,16 +77,18 @@ namespace EzDrink
             {
                 if (order.GetCount() != 0)
                 {
-                    _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugarness(), order.GetIceLevel(), "", ORDER_BUTTON_TEXT });
+                    _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order.GetAdditionsInString(), ORDER_BUTTON_TEXT });
                 }
             }
         }
 
-        private bool IsDeleteOrderButton(int ColumnIndex)
+        // is delete button in order
+        private bool IsDeleteOrderButton(int columnIndex)
         {
-            return ColumnIndex == ORDER_DELETE_COLUMN_INDEX;
+            return columnIndex == ORDER_DELETE_COLUMN_INDEX;
         }
 
+        // click drink order handler
         private void ClickDrinkOrderedCell(object sender, DataGridViewCellEventArgs e)
         {
             if (!IsDeleteOrderButton(e.ColumnIndex))
@@ -105,6 +107,7 @@ namespace EzDrink
             }
         }
 
+        // click addition handler
         private void ClickDrinkAdditionMenuCell(object sender, DataGridViewCellEventArgs e)
         {
 

@@ -41,7 +41,7 @@ namespace EzDrink
             this._drinkOrdered = new System.Windows.Forms.DataGridView();
             this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedSugariness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._deleteOrdered = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -154,7 +154,7 @@ namespace EzDrink
             this._drinkOrdered.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._orderedDrinkName,
             this._orderedDrinkPrice,
-            this._orderedSugariness,
+            this._orderedSugar,
             this._orderedIceLevel,
             this._orderedAddition,
             this._deleteOrdered});
@@ -183,10 +183,10 @@ namespace EzDrink
             // 
             // _orderedSugariness
             // 
-            this._orderedSugariness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedSugariness.HeaderText = "甜度";
-            this._orderedSugariness.Name = "_orderedSugariness";
-            this._orderedSugariness.ReadOnly = true;
+            this._orderedSugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedSugar.HeaderText = "甜度";
+            this._orderedSugar.Name = "_orderedSugariness";
+            this._orderedSugar.ReadOnly = true;
             // 
             // _orderedIceLevel
             // 
@@ -298,7 +298,7 @@ namespace EzDrink
         private DataGridViewTextBoxColumn _drinkPrice;
         private DataGridViewTextBoxColumn _orderedDrinkName;
         private DataGridViewTextBoxColumn _orderedDrinkPrice;
-        private DataGridViewTextBoxColumn _orderedSugariness;
+        private DataGridViewTextBoxColumn _orderedSugar;
         private DataGridViewTextBoxColumn _orderedIceLevel;
         private DataGridViewTextBoxColumn _orderedAddition;
         private DataGridViewButtonColumn _deleteOrdered;

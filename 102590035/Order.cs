@@ -10,7 +10,7 @@ namespace EzDrink
     {
         private Drink _drink;
         private int _count;
-        private string _sugariness;
+        private string _sugar;
         private string _iceLevel;
         private List<DrinkAddition> _additions;
 
@@ -30,7 +30,7 @@ namespace EzDrink
         {
             _drink = drink;
             _count = 1;
-            _sugariness = REGULAR_ICE;
+            _sugar = REGULAR_ICE;
             _iceLevel = REGULAR_SUGAR;
             _additions = new List<DrinkAddition>();
         }
@@ -48,9 +48,9 @@ namespace EzDrink
         }
 
         // get ordered drink sugarness
-        public string GetSugarness()
+        public string GetSugar()
         {
-            return _sugariness;
+            return _sugar;
         }
 
         // get ordered drink ice level
@@ -69,6 +69,18 @@ namespace EzDrink
         public List<DrinkAddition> GetAdditions()
         {
             return _additions;
+        }
+
+        public string GetAdditionsInString()
+        {
+            string additionOrdered = "";
+
+            foreach (DrinkAddition addition in _additions)
+            {
+                additionOrdered += addition.GetName();
+            }
+
+            return additionOrdered;
         }
 
         // increase drink count in order

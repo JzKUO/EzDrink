@@ -185,7 +185,308 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Literal constants(字面常數)-"正常"</SmellType>
+              <HashCode>LiteralConstants.REGULAR_ICE."正常"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>18</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Literal constants(字面常數)-"正常"</SmellType>
+              <HashCode>LiteralConstants.REGULAR_SUGAR."正常"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>23</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Literal constants(字面常數)-"少冰"</SmellType>
+              <HashCode>LiteralConstants.EASY_ICE."少冰"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>19</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Literal constants(字面常數)-"去冰"</SmellType>
+              <HashCode>LiteralConstants.ICE_FREE."去冰"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>20</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Literal constants(字面常數)-"溫熱"</SmellType>
+              <HashCode>LiteralConstants.WARM."溫熱"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>21</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Literal constants(字面常數)-"半糖"</SmellType>
+              <HashCode>LiteralConstants.HALF_SUGAR."半糖"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>24</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Literal constants(字面常數)-"微糖"</SmellType>
+              <HashCode>LiteralConstants.QUARTER_SUGAR."微糖"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>25</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Literal constants(字面常數)-"無糖"</SmellType>
+              <HashCode>LiteralConstants.SUGAR_FREE."無糖"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>26</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.REGULAR_ICE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>18</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.REGULAR_ICE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>18</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>11</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.EASY_ICE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>19</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>12</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.EASY_ICE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>19</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>13</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.ICE_FREE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>20</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.ICE_FREE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>20</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>15</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.WARM</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>21</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>16</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.WARM</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>21</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>17</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.REGULAR_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>23</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>18</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.REGULAR_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>23</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>19</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.HALF_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>24</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>20</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.HALF_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>24</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>21</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.QUARTER_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>25</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>22</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.QUARTER_SUGAR</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>25</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>23</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Order.SUGAR_FREE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>26</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>24</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Order.SUGAR_FREE</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>Order.cs</File>
+              <Line>26</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>25</Id>
+              <SmellType>Unresolved warnings(忽視警告)-The field 'EzDrinkModel._selectedOrderedDrinkRowIndex' is assigned but its value is never used</SmellType>
+              <HashCode>102590035\EzDrink.EzDrinkModel.cs.Unresolved warnings(忽視警告)-The field 'EzDrinkModel._selectedOrderedDrinkRowIndex' is assigned but its value is never used.15</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>102590035\EzDrink</Project>
+              <File>EzDrinkModel.cs</File>
+              <Line>15</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList>
             <string>SpacingAndNewLine17.DrinkModel.cs.2.        }.    }</string>
           </HashCodeIgnoreList>
@@ -222,6 +523,11 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>PresentationModel.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Program.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -243,7 +549,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>619</ProductionLoc>
+          <ProductionLoc>787</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

@@ -20,6 +20,7 @@ namespace EzDrink
             this._isAdded = false;
         }
 
+        // get addition
         public DrinkAddition GetAddition()
         {
             return this;
@@ -37,11 +38,13 @@ namespace EzDrink
             return _price;
         }
 
-        public bool GetIsAdded()
+        // get is addition already been added
+        public bool IsAdded()
         {
             return _isAdded;
         }
 
+        // disable add addition button
         public void DisableAddAddition()
         {
             _isAdded = true;

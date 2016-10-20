@@ -51,16 +51,55 @@ namespace EzDrink
         {
             if (IsAddDrinkButton(e.ColumnIndex))
             {
-                ClearOrderView();
                 _ezDrinkModel.BuyDrink(e.RowIndex);
-                ProduceOrder();
+                RefreshView();
             }
         }
 
-        // check if click on button
+        // click drink order handler
+        private void ClickDrinkOrderedCell(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (!IsDeleteOrderButton(e.ColumnIndex))
+                {
+                    Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be selected!");
+                }
+                else
+                {
+                    Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be deleted!");
+                    if (IsDeleteOrderButton(e.ColumnIndex))
+                    {
+                        _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
+                        RefreshView();
+                    }
+                }
+            }
+        }
+
+        // click addition handler
+        private void ClickDrinkAdditionMenuCell(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        // check if click on add button
         private bool IsAddDrinkButton(int clickColumnIndex)
         {
             return clickColumnIndex == DRINK_BUTTON_COLUMN_INDEX;
+        }
+
+        // check if delete button in order
+        private bool IsDeleteOrderButton(int columnIndex)
+        {
+            return columnIndex == ORDER_DELETE_COLUMN_INDEX;
+        }
+
+        // refresh view
+        private void RefreshView()
+        {
+            ClearOrderView();
+            ProduceOrder();
         }
 
         // clear order view
@@ -80,37 +119,6 @@ namespace EzDrink
                     _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order.GetAdditionsInString(), ORDER_BUTTON_TEXT });
                 }
             }
-        }
-
-        // is delete button in order
-        private bool IsDeleteOrderButton(int columnIndex)
-        {
-            return columnIndex == ORDER_DELETE_COLUMN_INDEX;
-        }
-
-        // click drink order handler
-        private void ClickDrinkOrderedCell(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!IsDeleteOrderButton(e.ColumnIndex))
-            {
-                Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be edited!");
-            }
-            else
-            {
-                Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be deleted!");
-                if (IsDeleteOrderButton(e.ColumnIndex))
-                {
-                    ClearOrderView();
-                    _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
-                    ProduceOrder();
-                }
-            }
-        }
-
-        // click addition handler
-        private void ClickDrinkAdditionMenuCell(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

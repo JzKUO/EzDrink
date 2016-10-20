@@ -31,7 +31,17 @@ namespace EzDrink
         private void InitializeComponent()
         {
             this._tabControl = new System.Windows.Forms.TabControl();
-            this._tabPage = new System.Windows.Forms.TabPage();
+            this._orderTabPage = new System.Windows.Forms.TabPage();
+            this._iceGroupBox = new System.Windows.Forms.GroupBox();
+            this._warmButton = new System.Windows.Forms.Button();
+            this._iceFreeButton = new System.Windows.Forms.Button();
+            this._iceEasyButton = new System.Windows.Forms.Button();
+            this._iceRegularButton = new System.Windows.Forms.Button();
+            this._gugarGroupBox = new System.Windows.Forms.GroupBox();
+            this._sugarFreeButton = new System.Windows.Forms.Button();
+            this._sugarQuarterButton = new System.Windows.Forms.Button();
+            this._sugarHalfButton = new System.Windows.Forms.Button();
+            this._sugarRegularButton = new System.Windows.Forms.Button();
             this._additionGroupBox = new System.Windows.Forms.GroupBox();
             this._drinkAdditions = new System.Windows.Forms.DataGridView();
             this._additionButton = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -50,10 +60,11 @@ namespace EzDrink
             this._addDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._drinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._drinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._gugarGroupBox = new System.Windows.Forms.GroupBox();
-            this._iceGroupBox = new System.Windows.Forms.GroupBox();
+            this._tabPage1 = new System.Windows.Forms.TabPage();
             this._tabControl.SuspendLayout();
-            this._tabPage.SuspendLayout();
+            this._orderTabPage.SuspendLayout();
+            this._iceGroupBox.SuspendLayout();
+            this._gugarGroupBox.SuspendLayout();
             this._additionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).BeginInit();
             this._orderGroupBox.SuspendLayout();
@@ -64,38 +75,143 @@ namespace EzDrink
             // 
             // _tabControl
             // 
-            this._tabControl.Controls.Add(this._tabPage);
+            this._tabControl.Controls.Add(this._orderTabPage);
+            this._tabControl.Controls.Add(this._tabPage1);
             this._tabControl.Location = new System.Drawing.Point(12, 12);
             this._tabControl.Name = "_tabControl";
             this._tabControl.SelectedIndex = 0;
-            this._tabControl.Size = new System.Drawing.Size(1035, 543);
+            this._tabControl.Size = new System.Drawing.Size(1035, 577);
             this._tabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this._tabControl.TabIndex = 1;
             // 
-            // _tabPage
+            // _orderTabPage
             // 
-            this._tabPage.Controls.Add(this._iceGroupBox);
-            this._tabPage.Controls.Add(this._gugarGroupBox);
-            this._tabPage.Controls.Add(this._additionGroupBox);
-            this._tabPage.Controls.Add(this._orderGroupBox);
-            this._tabPage.Controls.Add(this._menuGroupBox);
-            this._tabPage.Location = new System.Drawing.Point(4, 22);
-            this._tabPage.Name = "_tabPage";
-            this._tabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPage.Size = new System.Drawing.Size(1027, 517);
-            this._tabPage.TabIndex = 0;
-            this._tabPage.Text = "點餐系統";
-            this._tabPage.UseVisualStyleBackColor = true;
+            this._orderTabPage.Controls.Add(this._iceGroupBox);
+            this._orderTabPage.Controls.Add(this._gugarGroupBox);
+            this._orderTabPage.Controls.Add(this._additionGroupBox);
+            this._orderTabPage.Controls.Add(this._orderGroupBox);
+            this._orderTabPage.Controls.Add(this._menuGroupBox);
+            this._orderTabPage.Location = new System.Drawing.Point(4, 22);
+            this._orderTabPage.Name = "_orderTabPage";
+            this._orderTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._orderTabPage.Size = new System.Drawing.Size(1027, 551);
+            this._orderTabPage.TabIndex = 0;
+            this._orderTabPage.Text = "點餐系統";
+            this._orderTabPage.UseVisualStyleBackColor = true;
             // 
-            // _groupBox3
+            // _iceGroupBox
             // 
+            this._iceGroupBox.AutoSize = true;
+            this._iceGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._iceGroupBox.Controls.Add(this._warmButton);
+            this._iceGroupBox.Controls.Add(this._iceFreeButton);
+            this._iceGroupBox.Controls.Add(this._iceEasyButton);
+            this._iceGroupBox.Controls.Add(this._iceRegularButton);
+            this._iceGroupBox.Location = new System.Drawing.Point(279, 407);
+            this._iceGroupBox.Name = "_iceGroupBox";
+            this._iceGroupBox.Size = new System.Drawing.Size(168, 94);
+            this._iceGroupBox.TabIndex = 3;
+            this._iceGroupBox.TabStop = false;
+            this._iceGroupBox.Text = "溫度";
+            // 
+            // _warmButton
+            // 
+            this._warmButton.Location = new System.Drawing.Point(87, 50);
+            this._warmButton.Name = "_warmButton";
+            this._warmButton.Size = new System.Drawing.Size(75, 23);
+            this._warmButton.TabIndex = 3;
+            this._warmButton.Text = "溫熱";
+            this._warmButton.UseVisualStyleBackColor = true;
+            // 
+            // _iceFreeButton
+            // 
+            this._iceFreeButton.Location = new System.Drawing.Point(6, 50);
+            this._iceFreeButton.Name = "_iceFreeButton";
+            this._iceFreeButton.Size = new System.Drawing.Size(75, 23);
+            this._iceFreeButton.TabIndex = 2;
+            this._iceFreeButton.Text = "去冰";
+            this._iceFreeButton.UseVisualStyleBackColor = true;
+            // 
+            // _iceEasyButton
+            // 
+            this._iceEasyButton.Location = new System.Drawing.Point(87, 21);
+            this._iceEasyButton.Name = "_iceEasyButton";
+            this._iceEasyButton.Size = new System.Drawing.Size(75, 23);
+            this._iceEasyButton.TabIndex = 1;
+            this._iceEasyButton.Text = "少冰";
+            this._iceEasyButton.UseVisualStyleBackColor = true;
+            // 
+            // _iceRegularButton
+            // 
+            this._iceRegularButton.Location = new System.Drawing.Point(6, 21);
+            this._iceRegularButton.Name = "_iceRegularButton";
+            this._iceRegularButton.Size = new System.Drawing.Size(75, 23);
+            this._iceRegularButton.TabIndex = 0;
+            this._iceRegularButton.Text = "正常";
+            this._iceRegularButton.UseVisualStyleBackColor = true;
+            // 
+            // _gugarGroupBox
+            // 
+            this._gugarGroupBox.AutoSize = true;
+            this._gugarGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._gugarGroupBox.Controls.Add(this._sugarFreeButton);
+            this._gugarGroupBox.Controls.Add(this._sugarQuarterButton);
+            this._gugarGroupBox.Controls.Add(this._sugarHalfButton);
+            this._gugarGroupBox.Controls.Add(this._sugarRegularButton);
+            this._gugarGroupBox.Location = new System.Drawing.Point(279, 307);
+            this._gugarGroupBox.Name = "_gugarGroupBox";
+            this._gugarGroupBox.Size = new System.Drawing.Size(168, 94);
+            this._gugarGroupBox.TabIndex = 2;
+            this._gugarGroupBox.TabStop = false;
+            this._gugarGroupBox.Text = "甜度";
+            // 
+            // _sugarFreeButton
+            // 
+            this._sugarFreeButton.Location = new System.Drawing.Point(87, 50);
+            this._sugarFreeButton.Name = "_sugarFreeButton";
+            this._sugarFreeButton.Size = new System.Drawing.Size(75, 23);
+            this._sugarFreeButton.TabIndex = 3;
+            this._sugarFreeButton.Text = "無糖";
+            this._sugarFreeButton.UseVisualStyleBackColor = true;
+            // 
+            // _sugarQuarterButton
+            // 
+            this._sugarQuarterButton.Location = new System.Drawing.Point(6, 50);
+            this._sugarQuarterButton.Name = "_sugarQuarterButton";
+            this._sugarQuarterButton.Size = new System.Drawing.Size(75, 23);
+            this._sugarQuarterButton.TabIndex = 2;
+            this._sugarQuarterButton.Text = "微糖";
+            this._sugarQuarterButton.UseVisualStyleBackColor = true;
+            // 
+            // _sugarHalfButton
+            // 
+            this._sugarHalfButton.Location = new System.Drawing.Point(87, 21);
+            this._sugarHalfButton.Name = "_sugarHalfButton";
+            this._sugarHalfButton.Size = new System.Drawing.Size(75, 23);
+            this._sugarHalfButton.TabIndex = 1;
+            this._sugarHalfButton.Text = "半糖";
+            this._sugarHalfButton.UseVisualStyleBackColor = true;
+            // 
+            // _sugarRegularButton
+            // 
+            this._sugarRegularButton.Location = new System.Drawing.Point(6, 21);
+            this._sugarRegularButton.Name = "_sugarRegularButton";
+            this._sugarRegularButton.Size = new System.Drawing.Size(75, 23);
+            this._sugarRegularButton.TabIndex = 0;
+            this._sugarRegularButton.Text = "正常";
+            this._sugarRegularButton.UseVisualStyleBackColor = true;
+            // 
+            // _additionGroupBox
+            // 
+            this._additionGroupBox.AutoSize = true;
+            this._additionGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._additionGroupBox.Controls.Add(this._drinkAdditions);
             this._additionGroupBox.Location = new System.Drawing.Point(279, 6);
-            this._additionGroupBox.Name = "_groupBox3";
-            this._additionGroupBox.Size = new System.Drawing.Size(260, 280);
+            this._additionGroupBox.Name = "_additionGroupBox";
+            this._additionGroupBox.Size = new System.Drawing.Size(260, 295);
             this._additionGroupBox.TabIndex = 1;
             this._additionGroupBox.TabStop = false;
-            this._additionGroupBox.Text = "groupBox1";
+            this._additionGroupBox.Text = "加料";
             // 
             // _drinkAdditions
             // 
@@ -138,12 +254,14 @@ namespace EzDrink
             this._additionPrice.Name = "_additionPrice";
             this._additionPrice.ReadOnly = true;
             // 
-            // _groupBox2
+            // _orderGroupBox
             // 
+            this._orderGroupBox.AutoSize = true;
+            this._orderGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._orderGroupBox.Controls.Add(this._drinkOrdered);
             this._orderGroupBox.Location = new System.Drawing.Point(545, 6);
-            this._orderGroupBox.Name = "_groupBox2";
-            this._orderGroupBox.Size = new System.Drawing.Size(476, 505);
+            this._orderGroupBox.Name = "_orderGroupBox";
+            this._orderGroupBox.Size = new System.Drawing.Size(476, 520);
             this._orderGroupBox.TabIndex = 0;
             this._orderGroupBox.TabStop = false;
             this._orderGroupBox.Text = "點單";
@@ -213,12 +331,14 @@ namespace EzDrink
             this._deleteOrdered.Name = "_deleteOrdered";
             this._deleteOrdered.ReadOnly = true;
             // 
-            // _groupBox1
+            // _menuGroupBox
             // 
+            this._menuGroupBox.AutoSize = true;
+            this._menuGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._menuGroupBox.Controls.Add(this._drinkMenu);
             this._menuGroupBox.Location = new System.Drawing.Point(6, 6);
-            this._menuGroupBox.Name = "_groupBox1";
-            this._menuGroupBox.Size = new System.Drawing.Size(267, 505);
+            this._menuGroupBox.Name = "_menuGroupBox";
+            this._menuGroupBox.Size = new System.Drawing.Size(266, 520);
             this._menuGroupBox.TabIndex = 0;
             this._menuGroupBox.TabStop = false;
             this._menuGroupBox.Text = "飲料";
@@ -267,35 +387,31 @@ namespace EzDrink
             this._drinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this._drinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // groupBox1
+            // _tabPage1
             // 
-            this._gugarGroupBox.Location = new System.Drawing.Point(279, 292);
-            this._gugarGroupBox.Name = "groupBox1";
-            this._gugarGroupBox.Size = new System.Drawing.Size(260, 107);
-            this._gugarGroupBox.TabIndex = 2;
-            this._gugarGroupBox.TabStop = false;
-            this._gugarGroupBox.Text = "甜度";
-            // 
-            // groupBox2
-            // 
-            this._iceGroupBox.Location = new System.Drawing.Point(279, 405);
-            this._iceGroupBox.Name = "groupBox2";
-            this._iceGroupBox.Size = new System.Drawing.Size(260, 106);
-            this._iceGroupBox.TabIndex = 3;
-            this._iceGroupBox.TabStop = false;
-            this._iceGroupBox.Text = "溫度";
+            this._tabPage1.Location = new System.Drawing.Point(4, 22);
+            this._tabPage1.Name = "_tabPage1";
+            this._tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this._tabPage1.Size = new System.Drawing.Size(1027, 551);
+            this._tabPage1.TabIndex = 1;
+            this._tabPage1.Text = "tabPage1";
+            this._tabPage1.UseVisualStyleBackColor = true;
             // 
             // EzDrinkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 634);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1059, 598);
             this.Controls.Add(this._tabControl);
             this.Name = "EzDrinkForm";
             this.Text = "EzDrink";
             this.Load += new System.EventHandler(this.LoadForm);
             this._tabControl.ResumeLayout(false);
-            this._tabPage.ResumeLayout(false);
+            this._orderTabPage.ResumeLayout(false);
+            this._orderTabPage.PerformLayout();
+            this._iceGroupBox.ResumeLayout(false);
+            this._gugarGroupBox.ResumeLayout(false);
             this._additionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).EndInit();
             this._orderGroupBox.ResumeLayout(false);
@@ -308,7 +424,7 @@ namespace EzDrink
 
         #endregion
         private TabControl _tabControl;
-        private TabPage _tabPage;
+        private TabPage _orderTabPage;
         private DataGridView _drinkMenu;
         private DataGridView _drinkOrdered;
         private DataGridView _drinkAdditions;
@@ -330,6 +446,15 @@ namespace EzDrink
         private DataGridViewTextBoxColumn _additionName;
         private DataGridViewTextBoxColumn _additionPrice;
         private DataGridViewTextBoxColumn _orderedSugariness;
+        private Button _warmButton;
+        private Button _iceFreeButton;
+        private Button _iceEasyButton;
+        private Button _iceRegularButton;
+        private Button _sugarFreeButton;
+        private Button _sugarQuarterButton;
+        private Button _sugarHalfButton;
+        private Button _sugarRegularButton;
+        private TabPage _tabPage1;
     }
 }
 

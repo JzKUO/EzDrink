@@ -116,7 +116,11 @@ namespace EzDrink
             {
                 if (order.GetCount() != 0)
                 {
-                    _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order.GetAdditionsInString(), ORDER_BUTTON_TEXT });
+                    foreach (DrinkAddition addition in order.GetAdditions())
+                    {
+
+                    }
+                    _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order., ORDER_BUTTON_TEXT });
                 }
             }
         }

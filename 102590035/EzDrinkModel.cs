@@ -13,7 +13,7 @@ namespace EzDrink
         private readonly int[] _drinkPrices = { 20, 25, 40, 50, 30 };
         private readonly int[] _additionPrices = { 5, 5, 10, 10 };
         private int _selectedOrderedDrinkRowIndex;
-        private int _orderedDrinkCount = 0;
+        private int _orderedDrinkCount;
 
         public EzDrinkModel()
         {
@@ -27,6 +27,7 @@ namespace EzDrink
         {
             _orders = new List<Order>();
             _selectedOrderedDrinkRowIndex = 0;
+            _orderedDrinkCount = 0;
         }
 
         // Initailize drink list
@@ -106,22 +107,31 @@ namespace EzDrink
         public void AddAddition(int rowIndex)
         {
             DrinkAddition addition = _drinkAdditions[rowIndex];
-            if (!_orders[_selectedOrderedDrinkRowIndex].IsAlreadyAddedAddition(addition))
+            if (_orderedDrinkCount > 0)
             {
-                _orders[_selectedOrderedDrinkRowIndex].AddAddition(addition);
+                if (!_orders[_selectedOrderedDrinkRowIndex].IsAlreadyAddedAddition(addition))
+                {
+                    _orders[_selectedOrderedDrinkRowIndex].AddAddition(addition);
+                }
             }
         }
 
         // change addition in ordered drinks
         public void ChangeSugar(string sugar)
         {
-            _orders[_selectedOrderedDrinkRowIndex].ChangeSugar(sugar);
+            if(_orderedDrinkCount > 0)
+            {
+                _orders[_selectedOrderedDrinkRowIndex].ChangeSugar(sugar);
+            }
         }
 
         // change addition in ordered drinks
         public void ChangeIceLevel(string iceLevel)
         {
-            _orders[_selectedOrderedDrinkRowIndex].ChangeIceLevel(iceLevel);
+            if (_orderedDrinkCount > 0)
+            {
+                _orders[_selectedOrderedDrinkRowIndex].ChangeIceLevel(iceLevel);
+            }
         }
 
         // get all drinks in menu

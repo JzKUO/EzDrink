@@ -13,6 +13,7 @@ namespace EzDrink
         private readonly int[] _drinkPrices = { 20, 25, 40, 50, 30 };
         private readonly int[] _additionPrices = { 5, 5, 10, 10 };
         private int _selectedOrderedDrinkRowIndex;
+        private int _orderedDrinkCount = 0;
 
         public EzDrinkModel()
         {
@@ -55,35 +56,72 @@ namespace EzDrink
         {
             Order order = _orders[rowIndex];
             _orders.Remove(order);
+            _orderedDrinkCount--;
         }
 
         // add one drink
         public void BuyDrink(int rowIndex)
         {
             Drink drink = _drinks[rowIndex];
-            Order foundInOrder = null;
-            FoundInOrder(drink, ref foundInOrder);
-            if (foundInOrder == null)
-            {
-                Order order = new Order(drink);
-                _orders.Add(order);
-            }
-            else
-            {
-                foundInOrder.Increase();
-            }
+            //Order foundInOrder = null;
+            //FoundInOrder(drink, ref foundInOrder);
+            //if (foundInOrder == null)
+            //{
+            //    Order order = new Order(drink);
+            //    _orders.Add(order);
+            //    _orderedDrinkCount++;
+            //}
+            //else
+            //{
+            //    foundInOrder.Increase();
+            //}
+            Order order = new Order(drink);
+            _orders.Add(order);
+            _orderedDrinkCount++;
         }
 
         // find if drink already exist in order
-        private void FoundInOrder(Drink drink, ref Order foundOrder)
+        //private void FoundInOrder(Drink drink, ref Order foundOrder)
+        //{
+        //    foreach (Order order in _orders)
+        //    {
+        //        if (order.GetDrink().Equals(drink))
+        //        {
+        //            foundOrder = order;
+        //        }
+        //    }
+        //}
+
+        // change selected ordered drink
+        public void ChangeSelectedOrderedDrink(int rowIndex)
         {
-            foreach (Order order in _orders)
+            if (rowIndex >= 0)
             {
-                if (order.GetDrink().Equals(drink))
-                {
-                    foundOrder = order;
-                }
+                _selectedOrderedDrinkRowIndex = rowIndex;
             }
+            //Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
+        }
+
+        // change addition in ordered drinks
+        public void AddAddition(int rowIndex)
+        {
+            DrinkAddition addition = _drinkAdditions[rowIndex];
+            if (!_orders[_selectedOrderedDrinkRowIndex].IsAlreadyAddedAddition(addition))
+            {
+                _orders[_selectedOrderedDrinkRowIndex].AddAddition(addition);
+            }
+        }
+
+        // change addition in ordered drinks
+        public void ChangeSugar(string sugar)
+        {
+            _orders[_selectedOrderedDrinkRowIndex].ChangeSugar(sugar);
+        }
+
+        // change addition in ordered drinks
+        public void ChangeIceLevel(string iceLevel)
+        {
+            _orders[_selectedOrderedDrinkRowIndex].ChangeIceLevel(iceLevel);
         }
 
         // get all drinks in menu
@@ -102,6 +140,11 @@ namespace EzDrink
         public List<Order> GetOrders()
         {
             return _orders;
+        }
+
+        public int GetOrderedDrinkCount()
+        {
+            return _orderedDrinkCount;
         }
     }
 }

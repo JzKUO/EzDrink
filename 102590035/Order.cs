@@ -14,29 +14,14 @@ namespace EzDrink
         private string _iceLevel;
         private List<DrinkAddition> _additions;
 
-        // 冰度
-        public string REGULAR_ICE = "正常";
-        public string EASY_ICE = "少冰";
-        public string ICE_FREE = "去冰";
-        public string WARM = "溫熱";
-        // 甜度
-        public string REGULAR_SUGAR = "正常";
-        public string HALF_SUGAR = "半糖";
-        public string QUARTER_SUGAR = "微糖";
-        public string SUGAR_FREE = "無糖";
-
         // initial order
         public Order(Drink drink)
         {
             _drink = drink;
             _count = 1;
-            _sugar = REGULAR_ICE;
-            _iceLevel = REGULAR_SUGAR;
+            _sugar = "正常";
+            _iceLevel = "正常";
             _additions = new List<DrinkAddition>();
-            DrinkAddition addition = new DrinkAddition("name", 100);
-            _additions.Add(addition);
-            _additions.Add(addition);
-            _additions.Add(addition);
         }
 
         // get drink data in order
@@ -109,6 +94,30 @@ namespace EzDrink
             }
 
             return (_drink.GetPrice() * _count) + additionPrice;
+        }
+
+        internal void ChangeSugar(string sugar)
+        {
+            _sugar = sugar;
+        }
+
+        internal void ChangeIceLevel(string iceLevel)
+        {
+            _iceLevel = iceLevel;
+        }
+
+        internal void AddAddition(DrinkAddition addition)
+        {
+            _additions.Add(addition);
+        }
+
+        internal bool IsAlreadyAddedAddition(DrinkAddition addition)
+        {
+            foreach (DrinkAddition existAdditin in _additions)
+            {
+                if (addition.Equals(existAdditin)) return true;
+            }
+            return false;
         }
     }
 }

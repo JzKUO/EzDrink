@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace EzDrink
 {
@@ -23,6 +24,9 @@ namespace EzDrink
         public const int ORDER_ICE_COLUMN_INDEX = 3;
         public const int ORDER_ADDITION_COLUMN_INDEX = 4;
         public const int ORDER_DELETE_COLUMN_INDEX = 5;
+        public const int ADDITION_ADD_COLUMN_INDEX = 0;
+        public const int ADDITION_NAME_COLUMN_INDEX = 1;
+        public const int ADDITION_PRICE_COLUMN_INDEX = 2;
         private const string MENU_BUTTON_TEXT = "選擇";
         private const string ORDER_BUTTON_TEXT = "刪除";
 
@@ -35,11 +39,20 @@ namespace EzDrink
         // Form initialize event handler
         private void LoadForm(object sender, EventArgs e)
         {
+            InitializeDrinkMenuView();
+            InitializeAdditionView();
+        }
+
+        private void InitializeDrinkMenuView()
+        {
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
             {
                 _drinkMenu.Rows.Add(new object[] { MENU_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
             }
+        }
 
+        private void InitializeAdditionView()
+        {
             foreach (DrinkAddition drinkAddition in _ezDrinkModel.GetDrinkAdditions())
             {
                 _drinkAdditions.Rows.Add(new object[] { MENU_BUTTON_TEXT, drinkAddition.GetName(), drinkAddition.GetPrice() });
@@ -52,6 +65,7 @@ namespace EzDrink
             if (IsAddDrinkButton(e.ColumnIndex))
             {
                 _ezDrinkModel.BuyDrink(e.RowIndex);
+                _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                 RefreshView();
             }
         }
@@ -63,14 +77,16 @@ namespace EzDrink
             {
                 if (!IsDeleteOrderButton(e.ColumnIndex))
                 {
-                    Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be selected!");
+                    //Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be selected!");
+                    _ezDrinkModel.ChangeSelectedOrderedDrink(e.RowIndex);
                 }
                 else
                 {
-                    Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be deleted!");
+                    //Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be deleted!");
                     if (IsDeleteOrderButton(e.ColumnIndex))
                     {
                         _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
+                        _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                         RefreshView();
                     }
                 }
@@ -80,7 +96,8 @@ namespace EzDrink
         // click addition handler
         private void ClickDrinkAdditionMenuCell(object sender, DataGridViewCellEventArgs e)
         {
-            
+            _ezDrinkModel.AddAddition(e.RowIndex);
+            RefreshView();
         }
 
         // check if click on add button
@@ -106,7 +123,6 @@ namespace EzDrink
         private void ClearOrderView()
         {
             _drinkOrdered.Rows.Clear();
-            //_drinkOrdered.Refresh();
         }
 
         // regenerate order view
@@ -119,6 +135,20 @@ namespace EzDrink
                     _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order.GetAdditionsInString(order), ORDER_BUTTON_TEXT });
                 }
             }
+        }
+
+        private void ClickChangeSugar(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            _ezDrinkModel.ChangeSugar(button.Text);
+            RefreshView();
+        }
+
+        private void ClickChangeIceLevel(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            _ezDrinkModel.ChangeIceLevel(button.Text);
+            RefreshView();
         }
     }
 }

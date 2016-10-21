@@ -122,6 +122,8 @@ namespace EzDrink
             this._warmButton.TabIndex = 3;
             this._warmButton.Text = "溫熱";
             this._warmButton.UseVisualStyleBackColor = true;
+            this._warmButton.TextChanged += new System.EventHandler(this.LoadForm);
+            this._warmButton.Click += new System.EventHandler(this.ClickChangeIceLevel);
             // 
             // _iceFreeButton
             // 
@@ -131,6 +133,7 @@ namespace EzDrink
             this._iceFreeButton.TabIndex = 2;
             this._iceFreeButton.Text = "去冰";
             this._iceFreeButton.UseVisualStyleBackColor = true;
+            this._iceFreeButton.Click += new System.EventHandler(this.ClickChangeIceLevel);
             // 
             // _iceEasyButton
             // 
@@ -140,6 +143,7 @@ namespace EzDrink
             this._iceEasyButton.TabIndex = 1;
             this._iceEasyButton.Text = "少冰";
             this._iceEasyButton.UseVisualStyleBackColor = true;
+            this._iceEasyButton.Click += new System.EventHandler(this.ClickChangeIceLevel);
             // 
             // _iceRegularButton
             // 
@@ -149,6 +153,7 @@ namespace EzDrink
             this._iceRegularButton.TabIndex = 0;
             this._iceRegularButton.Text = "正常";
             this._iceRegularButton.UseVisualStyleBackColor = true;
+            this._iceRegularButton.Click += new System.EventHandler(this.ClickChangeIceLevel);
             // 
             // _gugarGroupBox
             // 
@@ -173,6 +178,7 @@ namespace EzDrink
             this._sugarFreeButton.TabIndex = 3;
             this._sugarFreeButton.Text = "無糖";
             this._sugarFreeButton.UseVisualStyleBackColor = true;
+            this._sugarFreeButton.Click += new System.EventHandler(this.ClickChangeSugar);
             // 
             // _sugarQuarterButton
             // 
@@ -182,6 +188,7 @@ namespace EzDrink
             this._sugarQuarterButton.TabIndex = 2;
             this._sugarQuarterButton.Text = "微糖";
             this._sugarQuarterButton.UseVisualStyleBackColor = true;
+            this._sugarQuarterButton.Click += new System.EventHandler(this.ClickChangeSugar);
             // 
             // _sugarHalfButton
             // 
@@ -191,6 +198,7 @@ namespace EzDrink
             this._sugarHalfButton.TabIndex = 1;
             this._sugarHalfButton.Text = "半糖";
             this._sugarHalfButton.UseVisualStyleBackColor = true;
+            this._sugarHalfButton.Click += new System.EventHandler(this.ClickChangeSugar);
             // 
             // _sugarRegularButton
             // 
@@ -200,6 +208,7 @@ namespace EzDrink
             this._sugarRegularButton.TabIndex = 0;
             this._sugarRegularButton.Text = "正常";
             this._sugarRegularButton.UseVisualStyleBackColor = true;
+            this._sugarRegularButton.Click += new System.EventHandler(this.ClickChangeSugar);
             // 
             // _additionGroupBox
             // 

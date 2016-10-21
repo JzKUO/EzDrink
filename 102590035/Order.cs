@@ -33,6 +33,10 @@ namespace EzDrink
             _sugar = REGULAR_ICE;
             _iceLevel = REGULAR_SUGAR;
             _additions = new List<DrinkAddition>();
+            DrinkAddition addition = new DrinkAddition("name", 100);
+            _additions.Add(addition);
+            _additions.Add(addition);
+            _additions.Add(addition);
         }
 
         // get drink data in order
@@ -71,16 +75,18 @@ namespace EzDrink
             return _additions;
         }
 
-        public string GetAdditionsInString()
+        // get additon in string
+        public string GetAdditionsInString(Order order)
         {
-            string additionOrdered = "";
-
-            foreach (DrinkAddition addition in _additions)
+            string[] additions = new string[0];
+            int i = 0;
+            foreach (DrinkAddition addition in order.GetAdditions())
             {
-                additionOrdered += addition.GetName();
+                Array.Resize<string>(ref additions, i + 1);
+                additions[i] = addition.GetName();
+                i++;
             }
-
-            return additionOrdered;
+            return String.Join(", ", additions);
         }
 
         // increase drink count in order

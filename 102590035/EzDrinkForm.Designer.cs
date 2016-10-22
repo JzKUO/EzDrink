@@ -54,13 +54,13 @@ namespace EzDrink
             this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._deleteOrdered = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._orderedDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._menuGroupBox = new System.Windows.Forms.GroupBox();
             this._drinkMenu = new System.Windows.Forms.DataGridView();
             this._addDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._drinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._drinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._tabPage1 = new System.Windows.Forms.TabPage();
+            this._backEndManageTabPage = new System.Windows.Forms.TabPage();
             this._tabControl.SuspendLayout();
             this._orderTabPage.SuspendLayout();
             this._iceGroupBox.SuspendLayout();
@@ -76,7 +76,7 @@ namespace EzDrink
             // _tabControl
             // 
             this._tabControl.Controls.Add(this._orderTabPage);
-            this._tabControl.Controls.Add(this._tabPage1);
+            this._tabControl.Controls.Add(this._backEndManageTabPage);
             this._tabControl.Location = new System.Drawing.Point(12, 12);
             this._tabControl.Name = "_tabControl";
             this._tabControl.SelectedIndex = 0;
@@ -155,7 +155,7 @@ namespace EzDrink
             this._iceRegularButton.UseVisualStyleBackColor = true;
             this._iceRegularButton.Click += new System.EventHandler(this.ClickChangeIceLevel);
             // 
-            // _gugarGroupBox
+            // _sugarGroupBox
             // 
             this._sugarGroupBox.AutoSize = true;
             this._sugarGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -164,7 +164,7 @@ namespace EzDrink
             this._sugarGroupBox.Controls.Add(this._sugarHalfButton);
             this._sugarGroupBox.Controls.Add(this._sugarRegularButton);
             this._sugarGroupBox.Location = new System.Drawing.Point(279, 307);
-            this._sugarGroupBox.Name = "_gugarGroupBox";
+            this._sugarGroupBox.Name = "_sugarGroupBox";
             this._sugarGroupBox.Size = new System.Drawing.Size(168, 94);
             this._sugarGroupBox.TabIndex = 2;
             this._sugarGroupBox.TabStop = false;
@@ -288,7 +288,7 @@ namespace EzDrink
             this._orderedSugar,
             this._orderedIceLevel,
             this._orderedAddition,
-            this._deleteOrdered});
+            this._orderedDeleteButton});
             this._drinkOrdered.Location = new System.Drawing.Point(6, 21);
             this._drinkOrdered.Name = "_drinkOrdered";
             this._drinkOrdered.ReadOnly = true;
@@ -312,11 +312,11 @@ namespace EzDrink
             this._orderedDrinkPrice.Name = "_orderedDrinkPrice";
             this._orderedDrinkPrice.ReadOnly = true;
             // 
-            // _orderedSugariness
+            // _orderedSugar
             // 
             this._orderedSugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._orderedSugar.HeaderText = "甜度";
-            this._orderedSugar.Name = "_orderedSugariness";
+            this._orderedSugar.Name = "_orderedSugar";
             this._orderedSugar.ReadOnly = true;
             // 
             // _orderedIceLevel
@@ -333,12 +333,12 @@ namespace EzDrink
             this._orderedAddition.Name = "_orderedAddition";
             this._orderedAddition.ReadOnly = true;
             // 
-            // _deleteOrdered
+            // _orderedDeleteButton
             // 
-            this._deleteOrdered.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._deleteOrdered.HeaderText = "刪除";
-            this._deleteOrdered.Name = "_deleteOrdered";
-            this._deleteOrdered.ReadOnly = true;
+            this._orderedDeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedDeleteButton.HeaderText = "刪除";
+            this._orderedDeleteButton.Name = "_orderedDeleteButton";
+            this._orderedDeleteButton.ReadOnly = true;
             // 
             // _menuGroupBox
             // 
@@ -396,15 +396,15 @@ namespace EzDrink
             this._drinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this._drinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // _tabPage1
+            // _backEndManageTabPage
             // 
-            this._tabPage1.Location = new System.Drawing.Point(4, 22);
-            this._tabPage1.Name = "_tabPage1";
-            this._tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPage1.Size = new System.Drawing.Size(1027, 551);
-            this._tabPage1.TabIndex = 1;
-            this._tabPage1.Text = "後台管理";
-            this._tabPage1.UseVisualStyleBackColor = true;
+            this._backEndManageTabPage.Location = new System.Drawing.Point(4, 22);
+            this._backEndManageTabPage.Name = "_backEndManageTabPage";
+            this._backEndManageTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._backEndManageTabPage.Size = new System.Drawing.Size(1027, 551);
+            this._backEndManageTabPage.TabIndex = 1;
+            this._backEndManageTabPage.Text = "後台管理";
+            this._backEndManageTabPage.UseVisualStyleBackColor = true;
             // 
             // EzDrinkForm
             // 
@@ -434,6 +434,7 @@ namespace EzDrink
         #endregion
         private TabControl _tabControl;
         private TabPage _orderTabPage;
+        private TabPage _backEndManageTabPage;
         private DataGridView _drinkMenu;
         private DataGridView _drinkOrdered;
         private DataGridView _drinkAdditions;
@@ -445,12 +446,6 @@ namespace EzDrink
         private DataGridViewButtonColumn _addDrinkButton;
         private DataGridViewTextBoxColumn _drinkName;
         private DataGridViewTextBoxColumn _drinkPrice;
-        private DataGridViewTextBoxColumn _orderedDrinkName;
-        private DataGridViewTextBoxColumn _orderedDrinkPrice;
-        private DataGridViewTextBoxColumn _orderedIceLevel;
-        private DataGridViewTextBoxColumn _orderedSugar;
-        private DataGridViewTextBoxColumn _orderedAddition;
-        private DataGridViewButtonColumn _deleteOrdered;
         private DataGridViewButtonColumn _additionButton;
         private DataGridViewTextBoxColumn _additionName;
         private DataGridViewTextBoxColumn _additionPrice;
@@ -462,7 +457,12 @@ namespace EzDrink
         private Button _sugarQuarterButton;
         private Button _sugarHalfButton;
         private Button _sugarRegularButton;
-        private TabPage _tabPage1;
+        private DataGridViewTextBoxColumn _orderedDrinkName;
+        private DataGridViewTextBoxColumn _orderedDrinkPrice;
+        private DataGridViewTextBoxColumn _orderedSugar;
+        private DataGridViewTextBoxColumn _orderedIceLevel;
+        private DataGridViewTextBoxColumn _orderedAddition;
+        private DataGridViewButtonColumn _orderedDeleteButton;
     }
 }
 

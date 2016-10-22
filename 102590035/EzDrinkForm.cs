@@ -152,5 +152,11 @@ namespace EzDrink
             _ezDrinkModel.ChangeIceLevel(button.Text);
             RefreshView();
         }
+
+        // click tool strip menu item handler
+        private void ClickToolStripMenuItem(object sender, EventArgs e)
+        {
+
+        }
     }
 }

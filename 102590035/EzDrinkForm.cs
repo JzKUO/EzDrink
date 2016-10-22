@@ -156,7 +156,15 @@ namespace EzDrink
         // click tool strip menu item handler
         private void ClickToolStripMenuItem(object sender, EventArgs e)
         {
-
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            switch (item.Text)
+            {
+                case "Exit":
+                    Application.Exit();
+                    break;
+                case "Help":
+                    break;
+            }
         }
     }
 }

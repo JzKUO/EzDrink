@@ -19,8 +19,8 @@ namespace EzDrink
         {
             _drink = drink;
             _count = 1;
-            _sugar = "正常";
-            _iceLevel = "正常";
+            _sugar = "";
+            _iceLevel = "";
             _additions = new List<DrinkAddition>();
         }
 
@@ -64,12 +64,12 @@ namespace EzDrink
         public string GetAdditionsInString(Order order)
         {
             string[] additions = new string[0];
-            int i = 0;
+            int additionCount = 0;
             foreach (DrinkAddition addition in order.GetAdditions())
             {
-                Array.Resize<string>(ref additions, i + 1);
-                additions[i] = addition.GetName();
-                i++;
+                Array.Resize<string>(ref additions, additionCount + 1);
+                additions[additionCount] = addition.GetName();
+                additionCount++;
             }
             return String.Join(", ", additions);
         }
@@ -96,26 +96,31 @@ namespace EzDrink
             return (_drink.GetPrice() * _count) + additionPrice;
         }
 
+        // change sugar level
         internal void ChangeSugar(string sugar)
         {
             _sugar = sugar;
         }
 
+        // change ice level
         internal void ChangeIceLevel(string iceLevel)
         {
             _iceLevel = iceLevel;
         }
 
+        // add addition into order
         internal void AddAddition(DrinkAddition addition)
         {
             _additions.Add(addition);
         }
 
+        // get if addition is already added
         internal bool IsAlreadyAddedAddition(DrinkAddition addition)
         {
             foreach (DrinkAddition existAdditin in _additions)
             {
-                if (addition.Equals(existAdditin)) return true;
+                if (addition.Equals(existAdditin))
+                    return true;
             }
             return false;
         }

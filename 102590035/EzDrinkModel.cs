@@ -119,7 +119,7 @@ namespace EzDrink
         // change addition in ordered drinks
         public void ChangeSugar(string sugar)
         {
-            if(_orderedDrinkCount > 0)
+            if (_orderedDrinkCount > 0)
             {
                 _orders[_selectedOrderedDrinkRowIndex].ChangeSugar(sugar);
             }
@@ -152,6 +152,7 @@ namespace EzDrink
             return _orders;
         }
 
+        // get how many drinks in order list
         public int GetOrderedDrinkCount()
         {
             return _orderedDrinkCount;

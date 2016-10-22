@@ -43,6 +43,7 @@ namespace EzDrink
             InitializeAdditionView();
         }
 
+        // initialize drink menu view
         private void InitializeDrinkMenuView()
         {
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
@@ -51,6 +52,7 @@ namespace EzDrink
             }
         }
 
+        // initialize additions view
         private void InitializeAdditionView()
         {
             foreach (DrinkAddition drinkAddition in _ezDrinkModel.GetDrinkAdditions())
@@ -77,12 +79,10 @@ namespace EzDrink
             {
                 if (!IsDeleteOrderButton(e.ColumnIndex))
                 {
-                    //Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be selected!");
                     _ezDrinkModel.ChangeSelectedOrderedDrink(e.RowIndex);
                 }
                 else
                 {
-                    //Console.WriteLine(_drinkOrdered.Rows[e.RowIndex].Cells[0].Value + " is be deleted!");
                     if (IsDeleteOrderButton(e.ColumnIndex))
                     {
                         _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
@@ -137,6 +137,7 @@ namespace EzDrink
             }
         }
 
+        // click change sugar handler
         private void ClickChangeSugar(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -144,6 +145,7 @@ namespace EzDrink
             RefreshView();
         }
 
+        // click change ice level handler
         private void ClickChangeIceLevel(object sender, EventArgs e)
         {
             Button button = (Button)sender;

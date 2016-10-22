@@ -37,7 +37,7 @@ namespace EzDrink
             this._iceFreeButton = new System.Windows.Forms.Button();
             this._iceEasyButton = new System.Windows.Forms.Button();
             this._iceRegularButton = new System.Windows.Forms.Button();
-            this._gugarGroupBox = new System.Windows.Forms.GroupBox();
+            this._sugarGroupBox = new System.Windows.Forms.GroupBox();
             this._sugarFreeButton = new System.Windows.Forms.Button();
             this._sugarQuarterButton = new System.Windows.Forms.Button();
             this._sugarHalfButton = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace EzDrink
             this._drinkOrdered = new System.Windows.Forms.DataGridView();
             this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedSugariness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._deleteOrdered = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -64,7 +64,7 @@ namespace EzDrink
             this._tabControl.SuspendLayout();
             this._orderTabPage.SuspendLayout();
             this._iceGroupBox.SuspendLayout();
-            this._gugarGroupBox.SuspendLayout();
+            this._sugarGroupBox.SuspendLayout();
             this._additionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).BeginInit();
             this._orderGroupBox.SuspendLayout();
@@ -87,7 +87,7 @@ namespace EzDrink
             // _orderTabPage
             // 
             this._orderTabPage.Controls.Add(this._iceGroupBox);
-            this._orderTabPage.Controls.Add(this._gugarGroupBox);
+            this._orderTabPage.Controls.Add(this._sugarGroupBox);
             this._orderTabPage.Controls.Add(this._additionGroupBox);
             this._orderTabPage.Controls.Add(this._orderGroupBox);
             this._orderTabPage.Controls.Add(this._menuGroupBox);
@@ -157,18 +157,18 @@ namespace EzDrink
             // 
             // _gugarGroupBox
             // 
-            this._gugarGroupBox.AutoSize = true;
-            this._gugarGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._gugarGroupBox.Controls.Add(this._sugarFreeButton);
-            this._gugarGroupBox.Controls.Add(this._sugarQuarterButton);
-            this._gugarGroupBox.Controls.Add(this._sugarHalfButton);
-            this._gugarGroupBox.Controls.Add(this._sugarRegularButton);
-            this._gugarGroupBox.Location = new System.Drawing.Point(279, 307);
-            this._gugarGroupBox.Name = "_gugarGroupBox";
-            this._gugarGroupBox.Size = new System.Drawing.Size(168, 94);
-            this._gugarGroupBox.TabIndex = 2;
-            this._gugarGroupBox.TabStop = false;
-            this._gugarGroupBox.Text = "甜度";
+            this._sugarGroupBox.AutoSize = true;
+            this._sugarGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._sugarGroupBox.Controls.Add(this._sugarFreeButton);
+            this._sugarGroupBox.Controls.Add(this._sugarQuarterButton);
+            this._sugarGroupBox.Controls.Add(this._sugarHalfButton);
+            this._sugarGroupBox.Controls.Add(this._sugarRegularButton);
+            this._sugarGroupBox.Location = new System.Drawing.Point(279, 307);
+            this._sugarGroupBox.Name = "_gugarGroupBox";
+            this._sugarGroupBox.Size = new System.Drawing.Size(168, 94);
+            this._sugarGroupBox.TabIndex = 2;
+            this._sugarGroupBox.TabStop = false;
+            this._sugarGroupBox.Text = "甜度";
             // 
             // _sugarFreeButton
             // 
@@ -285,7 +285,7 @@ namespace EzDrink
             this._drinkOrdered.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._orderedDrinkName,
             this._orderedDrinkPrice,
-            this._orderedSugariness,
+            this._orderedSugar,
             this._orderedIceLevel,
             this._orderedAddition,
             this._deleteOrdered});
@@ -314,10 +314,10 @@ namespace EzDrink
             // 
             // _orderedSugariness
             // 
-            this._orderedSugariness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedSugariness.HeaderText = "甜度";
-            this._orderedSugariness.Name = "_orderedSugariness";
-            this._orderedSugariness.ReadOnly = true;
+            this._orderedSugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedSugar.HeaderText = "甜度";
+            this._orderedSugar.Name = "_orderedSugariness";
+            this._orderedSugar.ReadOnly = true;
             // 
             // _orderedIceLevel
             // 
@@ -403,7 +403,7 @@ namespace EzDrink
             this._tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this._tabPage1.Size = new System.Drawing.Size(1027, 551);
             this._tabPage1.TabIndex = 1;
-            this._tabPage1.Text = "tabPage1";
+            this._tabPage1.Text = "後台管理";
             this._tabPage1.UseVisualStyleBackColor = true;
             // 
             // EzDrinkForm
@@ -420,7 +420,7 @@ namespace EzDrink
             this._orderTabPage.ResumeLayout(false);
             this._orderTabPage.PerformLayout();
             this._iceGroupBox.ResumeLayout(false);
-            this._gugarGroupBox.ResumeLayout(false);
+            this._sugarGroupBox.ResumeLayout(false);
             this._additionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).EndInit();
             this._orderGroupBox.ResumeLayout(false);
@@ -441,20 +441,19 @@ namespace EzDrink
         private GroupBox _orderGroupBox;
         private GroupBox _additionGroupBox;
         private GroupBox _iceGroupBox;
-        private GroupBox _gugarGroupBox;
+        private GroupBox _sugarGroupBox;
         private DataGridViewButtonColumn _addDrinkButton;
         private DataGridViewTextBoxColumn _drinkName;
         private DataGridViewTextBoxColumn _drinkPrice;
         private DataGridViewTextBoxColumn _orderedDrinkName;
         private DataGridViewTextBoxColumn _orderedDrinkPrice;
-        private DataGridViewTextBoxColumn _orderedSugar;
         private DataGridViewTextBoxColumn _orderedIceLevel;
+        private DataGridViewTextBoxColumn _orderedSugar;
         private DataGridViewTextBoxColumn _orderedAddition;
         private DataGridViewButtonColumn _deleteOrdered;
         private DataGridViewButtonColumn _additionButton;
         private DataGridViewTextBoxColumn _additionName;
         private DataGridViewTextBoxColumn _additionPrice;
-        private DataGridViewTextBoxColumn _orderedSugariness;
         private Button _warmButton;
         private Button _iceFreeButton;
         private Button _iceEasyButton;

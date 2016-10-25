@@ -49,12 +49,6 @@ namespace EzDrink
             this._additionPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderGroupBox = new System.Windows.Forms.GroupBox();
             this._drinkOrdered = new System.Windows.Forms.DataGridView();
-            this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._orderedDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._menuGroupBox = new System.Windows.Forms.GroupBox();
             this._drinkMenu = new System.Windows.Forms.DataGridView();
             this._addDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -76,6 +70,12 @@ namespace EzDrink
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._orderedDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._tabControl.SuspendLayout();
             this._orderTabPage.SuspendLayout();
             this._iceGroupBox.SuspendLayout();
@@ -300,6 +300,8 @@ namespace EzDrink
             // 
             this._drinkOrdered.AllowUserToAddRows = false;
             this._drinkOrdered.AllowUserToDeleteRows = false;
+            this._drinkOrdered.AllowUserToResizeColumns = false;
+            this._drinkOrdered.AllowUserToResizeRows = false;
             this._drinkOrdered.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._drinkOrdered.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this._drinkOrdered.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -319,48 +321,6 @@ namespace EzDrink
             this._drinkOrdered.TabIndex = 1;
             this._drinkOrdered.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkOrderedCell);
             // 
-            // _orderedDrinkName
-            // 
-            this._orderedDrinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedDrinkName.HeaderText = "飲料名稱";
-            this._orderedDrinkName.Name = "_orderedDrinkName";
-            this._orderedDrinkName.ReadOnly = true;
-            // 
-            // _orderedDrinkPrice
-            // 
-            this._orderedDrinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedDrinkPrice.HeaderText = "價格";
-            this._orderedDrinkPrice.Name = "_orderedDrinkPrice";
-            this._orderedDrinkPrice.ReadOnly = true;
-            // 
-            // _orderedSugar
-            // 
-            this._orderedSugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedSugar.HeaderText = "甜度";
-            this._orderedSugar.Name = "_orderedSugar";
-            this._orderedSugar.ReadOnly = true;
-            // 
-            // _orderedIceLevel
-            // 
-            this._orderedIceLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedIceLevel.HeaderText = "溫度";
-            this._orderedIceLevel.Name = "_orderedIceLevel";
-            this._orderedIceLevel.ReadOnly = true;
-            // 
-            // _orderedAddition
-            // 
-            this._orderedAddition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedAddition.HeaderText = "加料";
-            this._orderedAddition.Name = "_orderedAddition";
-            this._orderedAddition.ReadOnly = true;
-            // 
-            // _orderedDeleteButton
-            // 
-            this._orderedDeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._orderedDeleteButton.HeaderText = "刪除";
-            this._orderedDeleteButton.Name = "_orderedDeleteButton";
-            this._orderedDeleteButton.ReadOnly = true;
-            // 
             // _menuGroupBox
             // 
             this._menuGroupBox.AutoSize = true;
@@ -377,6 +337,8 @@ namespace EzDrink
             // 
             this._drinkMenu.AllowUserToAddRows = false;
             this._drinkMenu.AllowUserToDeleteRows = false;
+            this._drinkMenu.AllowUserToResizeColumns = false;
+            this._drinkMenu.AllowUserToResizeRows = false;
             this._drinkMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._drinkMenu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this._drinkMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -561,7 +523,7 @@ namespace EzDrink
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
             // 
@@ -576,9 +538,57 @@ namespace EzDrink
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
+            // 
+            // _orderedDrinkName
+            // 
+            this._orderedDrinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedDrinkName.FillWeight = 100.2169F;
+            this._orderedDrinkName.HeaderText = "飲料名稱";
+            this._orderedDrinkName.Name = "_orderedDrinkName";
+            this._orderedDrinkName.ReadOnly = true;
+            // 
+            // _orderedDrinkPrice
+            // 
+            this._orderedDrinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedDrinkPrice.FillWeight = 100.1838F;
+            this._orderedDrinkPrice.HeaderText = "價格";
+            this._orderedDrinkPrice.Name = "_orderedDrinkPrice";
+            this._orderedDrinkPrice.ReadOnly = true;
+            // 
+            // _orderedSugar
+            // 
+            this._orderedSugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedSugar.FillWeight = 100.1562F;
+            this._orderedSugar.HeaderText = "甜度";
+            this._orderedSugar.Name = "_orderedSugar";
+            this._orderedSugar.ReadOnly = true;
+            // 
+            // _orderedIceLevel
+            // 
+            this._orderedIceLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedIceLevel.FillWeight = 98.83279F;
+            this._orderedIceLevel.HeaderText = "溫度";
+            this._orderedIceLevel.Name = "_orderedIceLevel";
+            this._orderedIceLevel.ReadOnly = true;
+            // 
+            // _orderedAddition
+            // 
+            this._orderedAddition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedAddition.FillWeight = 100.3313F;
+            this._orderedAddition.HeaderText = "加料";
+            this._orderedAddition.Name = "_orderedAddition";
+            this._orderedAddition.ReadOnly = true;
+            // 
+            // _orderedDeleteButton
+            // 
+            this._orderedDeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._orderedDeleteButton.FillWeight = 100.2791F;
+            this._orderedDeleteButton.HeaderText = "";
+            this._orderedDeleteButton.Name = "_orderedDeleteButton";
+            this._orderedDeleteButton.ReadOnly = true;
             // 
             // EzDrinkForm
             // 
@@ -590,6 +600,7 @@ namespace EzDrink
             this.Controls.Add(this._ezDrinkMenuStrip);
             this.MainMenuStrip = this._ezDrinkMenuStrip;
             this.Name = "EzDrinkForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EzDrink";
             this.Load += new System.EventHandler(this.LoadForm);
             this._tabControl.ResumeLayout(false);
@@ -644,12 +655,6 @@ namespace EzDrink
         private Button _sugarQuarterButton;
         private Button _sugarHalfButton;
         private Button _sugarRegularButton;
-        private DataGridViewTextBoxColumn _orderedDrinkName;
-        private DataGridViewTextBoxColumn _orderedDrinkPrice;
-        private DataGridViewTextBoxColumn _orderedSugar;
-        private DataGridViewTextBoxColumn _orderedIceLevel;
-        private DataGridViewTextBoxColumn _orderedAddition;
-        private DataGridViewButtonColumn _orderedDeleteButton;
 
         // back end management
         private TabPage _backEndManageTabPage;
@@ -667,6 +672,12 @@ namespace EzDrink
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private DataGridViewTextBoxColumn _orderedDrinkName;
+        private DataGridViewTextBoxColumn _orderedDrinkPrice;
+        private DataGridViewTextBoxColumn _orderedSugar;
+        private DataGridViewTextBoxColumn _orderedIceLevel;
+        private DataGridViewTextBoxColumn _orderedAddition;
+        private DataGridViewButtonColumn _orderedDeleteButton;
     }
 }
 

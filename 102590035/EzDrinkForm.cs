@@ -171,7 +171,8 @@ namespace EzDrink
                 case "Exit":
                     Application.Exit();
                     break;
-                case "Help":
+                case "About":
+                    AboutMessageBox.ShowAbout();
                     break;
             }
         }

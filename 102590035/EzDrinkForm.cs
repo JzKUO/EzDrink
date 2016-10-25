@@ -64,18 +64,21 @@ namespace EzDrink
         // Add drink order event handler
         private void ClickDrinkMenuCell(object sender, DataGridViewCellEventArgs e)
         {
-            if (IsAddDrinkButton(e.ColumnIndex))
+            if (IsValidRow(e.RowIndex))
             {
-                _ezDrinkModel.BuyDrink(e.RowIndex);
-                _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
-                RefreshView();
+                if (IsAddDrinkButton(e.ColumnIndex))
+                {
+                    _ezDrinkModel.BuyDrink(e.RowIndex);
+                    _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
+                    RefreshView();
+                }
             }
         }
 
         // click drink order handler
         private void ClickDrinkOrderedCell(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (IsValidRow(e.RowIndex))
             {
                 if (!IsDeleteOrderButton(e.ColumnIndex))
                 {
@@ -104,6 +107,12 @@ namespace EzDrink
         private bool IsAddDrinkButton(int clickColumnIndex)
         {
             return clickColumnIndex == DRINK_BUTTON_COLUMN_INDEX;
+        }
+
+        // check if is click on valid rows
+        private bool IsValidRow(int row)
+        {
+            return row >= 0;
         }
 
         // check if delete button in order
@@ -151,6 +160,21 @@ namespace EzDrink
             Button button = (Button)sender;
             _ezDrinkModel.ChangeIceLevel(button.Text);
             RefreshView();
+        }
+
+        // click tool strip menu item handler
+        private void ClickToolStripMenuItem(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            switch (item.Text)
+            {
+                case "Exit":
+                    Application.Exit();
+                    break;
+                case "About":
+                    AboutMessageBox.ShowAbout();
+                    break;
+            }
         }
     }
 }

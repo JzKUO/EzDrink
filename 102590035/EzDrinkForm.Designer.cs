@@ -49,33 +49,47 @@ namespace EzDrink
             this._additionPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderGroupBox = new System.Windows.Forms.GroupBox();
             this._drinkOrdered = new System.Windows.Forms.DataGridView();
-            this._menuGroupBox = new System.Windows.Forms.GroupBox();
-            this._drinkMenu = new System.Windows.Forms.DataGridView();
-            this._addDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._drinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._drinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._backEndManageTabPage = new System.Windows.Forms.TabPage();
-            this._backEndAdditionGroupBox = new System.Windows.Forms.GroupBox();
-            this._backEndAdditionManagement = new System.Windows.Forms.DataGridView();
-            this._backEndDeleteAdditionButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._backEndAdditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._backEndAdditionPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._drinkListgroupBox = new System.Windows.Forms.GroupBox();
-            this._backEndDrinkManagement = new System.Windows.Forms.DataGridView();
-            this._backEndDeleteDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._backEndDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._backEndDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._ezDrinkMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedIceLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedAddition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._menuGroupBox = new System.Windows.Forms.GroupBox();
+            this._drinkMenu = new System.Windows.Forms.DataGridView();
+            this._addDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._drinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._drinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._backEndManageTabPage = new System.Windows.Forms.TabPage();
+            this._createAdditionGroupBox = new System.Windows.Forms.GroupBox();
+            this._additionPriceTextBox = new System.Windows.Forms.TextBox();
+            this._additionNameTextBox = new System.Windows.Forms.TextBox();
+            this._additionPriceLabel = new System.Windows.Forms.Label();
+            this._additionNameLabel = new System.Windows.Forms.Label();
+            this._readAdditionFromFileButton = new System.Windows.Forms.Button();
+            this._createAdditionButton = new System.Windows.Forms.Button();
+            this._createDrinkGroupBox = new System.Windows.Forms.GroupBox();
+            this._drinkPriceTextBox = new System.Windows.Forms.TextBox();
+            this._drinkNameTextBox = new System.Windows.Forms.TextBox();
+            this._drinkPriceLabel = new System.Windows.Forms.Label();
+            this._drinkNameLabel = new System.Windows.Forms.Label();
+            this._readDrinkFromFileButton = new System.Windows.Forms.Button();
+            this._createDrinkButton = new System.Windows.Forms.Button();
+            this._backEndAdditionGroupBox = new System.Windows.Forms.GroupBox();
+            this._backEndAdditionManagement = new System.Windows.Forms.DataGridView();
+            this._backEndDeleteAdditionButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._backEndAdditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._backEndAdditionPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._drinkListGroupBox = new System.Windows.Forms.GroupBox();
+            this._backEndDrinkManagement = new System.Windows.Forms.DataGridView();
+            this._backEndDeleteDrinkButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._backEndDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._backEndDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._ezDrinkMenuStrip = new System.Windows.Forms.MenuStrip();
+            this._fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._tabControl.SuspendLayout();
             this._orderTabPage.SuspendLayout();
             this._iceGroupBox.SuspendLayout();
@@ -87,9 +101,11 @@ namespace EzDrink
             this._menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._drinkMenu)).BeginInit();
             this._backEndManageTabPage.SuspendLayout();
+            this._createAdditionGroupBox.SuspendLayout();
+            this._createDrinkGroupBox.SuspendLayout();
             this._backEndAdditionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._backEndAdditionManagement)).BeginInit();
-            this._drinkListgroupBox.SuspendLayout();
+            this._drinkListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._backEndDrinkManagement)).BeginInit();
             this._ezDrinkMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +117,7 @@ namespace EzDrink
             this._tabControl.Location = new System.Drawing.Point(12, 27);
             this._tabControl.Name = "_tabControl";
             this._tabControl.SelectedIndex = 0;
-            this._tabControl.Size = new System.Drawing.Size(1035, 574);
+            this._tabControl.Size = new System.Drawing.Size(1062, 574);
             this._tabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this._tabControl.TabIndex = 1;
             // 
@@ -115,7 +131,7 @@ namespace EzDrink
             this._orderTabPage.Location = new System.Drawing.Point(4, 22);
             this._orderTabPage.Name = "_orderTabPage";
             this._orderTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._orderTabPage.Size = new System.Drawing.Size(1027, 548);
+            this._orderTabPage.Size = new System.Drawing.Size(1054, 548);
             this._orderTabPage.TabIndex = 0;
             this._orderTabPage.Text = "點餐系統";
             this._orderTabPage.UseVisualStyleBackColor = true;
@@ -264,7 +280,7 @@ namespace EzDrink
             this._drinkAdditions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this._drinkAdditions.Size = new System.Drawing.Size(248, 253);
             this._drinkAdditions.TabIndex = 0;
-            this._drinkAdditions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkAdditionMenuCell);
+            this._drinkAdditions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkAdditionsMenuCell);
             // 
             // _additionButton
             // 
@@ -291,7 +307,7 @@ namespace EzDrink
             this._orderGroupBox.Controls.Add(this._drinkOrdered);
             this._orderGroupBox.Location = new System.Drawing.Point(545, 6);
             this._orderGroupBox.Name = "_orderGroupBox";
-            this._orderGroupBox.Size = new System.Drawing.Size(476, 527);
+            this._orderGroupBox.Size = new System.Drawing.Size(507, 527);
             this._orderGroupBox.TabIndex = 0;
             this._orderGroupBox.TabStop = false;
             this._orderGroupBox.Text = "點單";
@@ -315,232 +331,11 @@ namespace EzDrink
             this._drinkOrdered.Location = new System.Drawing.Point(6, 21);
             this._drinkOrdered.Name = "_drinkOrdered";
             this._drinkOrdered.ReadOnly = true;
-            this._drinkOrdered.RowHeadersVisible = false;
+            this._drinkOrdered.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this._drinkOrdered.RowTemplate.Height = 24;
-            this._drinkOrdered.Size = new System.Drawing.Size(464, 485);
-            this._drinkOrdered.TabIndex = 1;
-            this._drinkOrdered.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkOrderedCell);
-            // 
-            // _menuGroupBox
-            // 
-            this._menuGroupBox.AutoSize = true;
-            this._menuGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._menuGroupBox.Controls.Add(this._drinkMenu);
-            this._menuGroupBox.Location = new System.Drawing.Point(6, 6);
-            this._menuGroupBox.Name = "_menuGroupBox";
-            this._menuGroupBox.Size = new System.Drawing.Size(266, 527);
-            this._menuGroupBox.TabIndex = 0;
-            this._menuGroupBox.TabStop = false;
-            this._menuGroupBox.Text = "飲料";
-            // 
-            // _drinkMenu
-            // 
-            this._drinkMenu.AllowUserToAddRows = false;
-            this._drinkMenu.AllowUserToDeleteRows = false;
-            this._drinkMenu.AllowUserToResizeColumns = false;
-            this._drinkMenu.AllowUserToResizeRows = false;
-            this._drinkMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._drinkMenu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this._drinkMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._drinkMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._addDrinkButton,
-            this._drinkName,
-            this._drinkPrice});
-            this._drinkMenu.Location = new System.Drawing.Point(6, 21);
-            this._drinkMenu.Name = "_drinkMenu";
-            this._drinkMenu.ReadOnly = true;
-            this._drinkMenu.RowHeadersVisible = false;
-            this._drinkMenu.RowTemplate.Height = 24;
-            this._drinkMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this._drinkMenu.Size = new System.Drawing.Size(254, 485);
-            this._drinkMenu.TabIndex = 0;
-            this._drinkMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkMenuCell);
-            // 
-            // _addDrinkButton
-            // 
-            this._addDrinkButton.HeaderText = "";
-            this._addDrinkButton.Name = "_addDrinkButton";
-            this._addDrinkButton.ReadOnly = true;
-            // 
-            // _drinkName
-            // 
-            this._drinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._drinkName.HeaderText = "飲料";
-            this._drinkName.Name = "_drinkName";
-            this._drinkName.ReadOnly = true;
-            this._drinkName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // _drinkPrice
-            // 
-            this._drinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._drinkPrice.HeaderText = "價格";
-            this._drinkPrice.Name = "_drinkPrice";
-            this._drinkPrice.ReadOnly = true;
-            this._drinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this._drinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // _backEndManageTabPage
-            // 
-            this._backEndManageTabPage.Controls.Add(this._backEndAdditionGroupBox);
-            this._backEndManageTabPage.Controls.Add(this._drinkListgroupBox);
-            this._backEndManageTabPage.Location = new System.Drawing.Point(4, 22);
-            this._backEndManageTabPage.Name = "_backEndManageTabPage";
-            this._backEndManageTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._backEndManageTabPage.Size = new System.Drawing.Size(1027, 548);
-            this._backEndManageTabPage.TabIndex = 1;
-            this._backEndManageTabPage.Text = "後台管理";
-            this._backEndManageTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _backEndAdditionGroupBox
-            // 
-            this._backEndAdditionGroupBox.AutoSize = true;
-            this._backEndAdditionGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._backEndAdditionGroupBox.Controls.Add(this._backEndAdditionManagement);
-            this._backEndAdditionGroupBox.Location = new System.Drawing.Point(755, 6);
-            this._backEndAdditionGroupBox.Name = "_backEndAdditionGroupBox";
-            this._backEndAdditionGroupBox.Size = new System.Drawing.Size(266, 520);
-            this._backEndAdditionGroupBox.TabIndex = 2;
-            this._backEndAdditionGroupBox.TabStop = false;
-            this._backEndAdditionGroupBox.Text = "加料清單";
-            // 
-            // _backEndAdditionManagement
-            // 
-            this._backEndAdditionManagement.AllowUserToAddRows = false;
-            this._backEndAdditionManagement.AllowUserToDeleteRows = false;
-            this._backEndAdditionManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._backEndAdditionManagement.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this._backEndAdditionManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._backEndAdditionManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._backEndDeleteAdditionButton,
-            this._backEndAdditionName,
-            this._backEndAdditionPrice});
-            this._backEndAdditionManagement.Location = new System.Drawing.Point(6, 21);
-            this._backEndAdditionManagement.Name = "_backEndAdditionManagement";
-            this._backEndAdditionManagement.ReadOnly = true;
-            this._backEndAdditionManagement.RowHeadersVisible = false;
-            this._backEndAdditionManagement.RowTemplate.Height = 24;
-            this._backEndAdditionManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this._backEndAdditionManagement.Size = new System.Drawing.Size(254, 478);
-            this._backEndAdditionManagement.TabIndex = 0;
-            // 
-            // _backEndDeleteAdditionButton
-            // 
-            this._backEndDeleteAdditionButton.HeaderText = "";
-            this._backEndDeleteAdditionButton.Name = "_backEndDeleteAdditionButton";
-            this._backEndDeleteAdditionButton.ReadOnly = true;
-            // 
-            // _backEndAdditionName
-            // 
-            this._backEndAdditionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._backEndAdditionName.HeaderText = "飲料";
-            this._backEndAdditionName.Name = "_backEndAdditionName";
-            this._backEndAdditionName.ReadOnly = true;
-            this._backEndAdditionName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // _backEndAdditionPrice
-            // 
-            this._backEndAdditionPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._backEndAdditionPrice.HeaderText = "價格";
-            this._backEndAdditionPrice.Name = "_backEndAdditionPrice";
-            this._backEndAdditionPrice.ReadOnly = true;
-            this._backEndAdditionPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this._backEndAdditionPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // _drinkListgroupBox
-            // 
-            this._drinkListgroupBox.AutoSize = true;
-            this._drinkListgroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._drinkListgroupBox.Controls.Add(this._backEndDrinkManagement);
-            this._drinkListgroupBox.Location = new System.Drawing.Point(6, 6);
-            this._drinkListgroupBox.Name = "_drinkListgroupBox";
-            this._drinkListgroupBox.Size = new System.Drawing.Size(266, 520);
-            this._drinkListgroupBox.TabIndex = 1;
-            this._drinkListgroupBox.TabStop = false;
-            this._drinkListgroupBox.Text = "飲料清單";
-            // 
-            // _backEndDrinkManagement
-            // 
-            this._backEndDrinkManagement.AllowUserToAddRows = false;
-            this._backEndDrinkManagement.AllowUserToDeleteRows = false;
-            this._backEndDrinkManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._backEndDrinkManagement.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this._backEndDrinkManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._backEndDrinkManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._backEndDeleteDrinkButton,
-            this._backEndDrinkName,
-            this._backEndDrinkPrice});
-            this._backEndDrinkManagement.Location = new System.Drawing.Point(6, 21);
-            this._backEndDrinkManagement.Name = "_backEndDrinkManagement";
-            this._backEndDrinkManagement.ReadOnly = true;
-            this._backEndDrinkManagement.RowHeadersVisible = false;
-            this._backEndDrinkManagement.RowTemplate.Height = 24;
-            this._backEndDrinkManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this._backEndDrinkManagement.Size = new System.Drawing.Size(254, 478);
-            this._backEndDrinkManagement.TabIndex = 0;
-            // 
-            // _backEndDeleteDrinkButton
-            // 
-            this._backEndDeleteDrinkButton.HeaderText = "";
-            this._backEndDeleteDrinkButton.Name = "_backEndDeleteDrinkButton";
-            this._backEndDeleteDrinkButton.ReadOnly = true;
-            // 
-            // _backEndDrinkName
-            // 
-            this._backEndDrinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._backEndDrinkName.HeaderText = "飲料名稱";
-            this._backEndDrinkName.Name = "_backEndDrinkName";
-            this._backEndDrinkName.ReadOnly = true;
-            this._backEndDrinkName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // _backEndDrinkPrice
-            // 
-            this._backEndDrinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._backEndDrinkPrice.HeaderText = "價格";
-            this._backEndDrinkPrice.Name = "_backEndDrinkPrice";
-            this._backEndDrinkPrice.ReadOnly = true;
-            this._backEndDrinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this._backEndDrinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // _ezDrinkMenuStrip
-            // 
-            this._ezDrinkMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this._ezDrinkMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this._ezDrinkMenuStrip.Name = "_ezDrinkMenuStrip";
-            this._ezDrinkMenuStrip.Size = new System.Drawing.Size(1059, 24);
-            this._ezDrinkMenuStrip.TabIndex = 2;
-            this._ezDrinkMenuStrip.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
+            this._drinkOrdered.Size = new System.Drawing.Size(495, 485);
+            this._drinkOrdered.TabIndex = 0;
+            this._drinkOrdered.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickOrdersCell);
             // 
             // _orderedDrinkName
             // 
@@ -590,12 +385,362 @@ namespace EzDrink
             this._orderedDeleteButton.Name = "_orderedDeleteButton";
             this._orderedDeleteButton.ReadOnly = true;
             // 
+            // _menuGroupBox
+            // 
+            this._menuGroupBox.AutoSize = true;
+            this._menuGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._menuGroupBox.Controls.Add(this._drinkMenu);
+            this._menuGroupBox.Location = new System.Drawing.Point(6, 6);
+            this._menuGroupBox.Name = "_menuGroupBox";
+            this._menuGroupBox.Size = new System.Drawing.Size(266, 527);
+            this._menuGroupBox.TabIndex = 0;
+            this._menuGroupBox.TabStop = false;
+            this._menuGroupBox.Text = "飲料";
+            // 
+            // _drinkMenu
+            // 
+            this._drinkMenu.AllowUserToAddRows = false;
+            this._drinkMenu.AllowUserToDeleteRows = false;
+            this._drinkMenu.AllowUserToResizeColumns = false;
+            this._drinkMenu.AllowUserToResizeRows = false;
+            this._drinkMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._drinkMenu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this._drinkMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._drinkMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._addDrinkButton,
+            this._drinkName,
+            this._drinkPrice});
+            this._drinkMenu.Location = new System.Drawing.Point(6, 21);
+            this._drinkMenu.Name = "_drinkMenu";
+            this._drinkMenu.ReadOnly = true;
+            this._drinkMenu.RowHeadersVisible = false;
+            this._drinkMenu.RowTemplate.Height = 24;
+            this._drinkMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this._drinkMenu.Size = new System.Drawing.Size(254, 485);
+            this._drinkMenu.TabIndex = 0;
+            this._drinkMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinksMenuCell);
+            // 
+            // _addDrinkButton
+            // 
+            this._addDrinkButton.HeaderText = "";
+            this._addDrinkButton.Name = "_addDrinkButton";
+            this._addDrinkButton.ReadOnly = true;
+            // 
+            // _drinkName
+            // 
+            this._drinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._drinkName.HeaderText = "飲料";
+            this._drinkName.Name = "_drinkName";
+            this._drinkName.ReadOnly = true;
+            this._drinkName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _drinkPrice
+            // 
+            this._drinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._drinkPrice.HeaderText = "價格";
+            this._drinkPrice.Name = "_drinkPrice";
+            this._drinkPrice.ReadOnly = true;
+            this._drinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this._drinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // _backEndManageTabPage
+            // 
+            this._backEndManageTabPage.Controls.Add(this._createAdditionGroupBox);
+            this._backEndManageTabPage.Controls.Add(this._createDrinkGroupBox);
+            this._backEndManageTabPage.Controls.Add(this._backEndAdditionGroupBox);
+            this._backEndManageTabPage.Controls.Add(this._drinkListGroupBox);
+            this._backEndManageTabPage.Location = new System.Drawing.Point(4, 22);
+            this._backEndManageTabPage.Name = "_backEndManageTabPage";
+            this._backEndManageTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._backEndManageTabPage.Size = new System.Drawing.Size(1027, 548);
+            this._backEndManageTabPage.TabIndex = 1;
+            this._backEndManageTabPage.Text = "後台管理";
+            this._backEndManageTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _createAdditionGroupBox
+            // 
+            this._createAdditionGroupBox.Controls.Add(this._additionPriceTextBox);
+            this._createAdditionGroupBox.Controls.Add(this._additionNameTextBox);
+            this._createAdditionGroupBox.Controls.Add(this._additionPriceLabel);
+            this._createAdditionGroupBox.Controls.Add(this._additionNameLabel);
+            this._createAdditionGroupBox.Controls.Add(this._readAdditionFromFileButton);
+            this._createAdditionGroupBox.Controls.Add(this._createAdditionButton);
+            this._createAdditionGroupBox.Location = new System.Drawing.Point(337, 268);
+            this._createAdditionGroupBox.Name = "_createAdditionGroupBox";
+            this._createAdditionGroupBox.Size = new System.Drawing.Size(318, 258);
+            this._createAdditionGroupBox.TabIndex = 4;
+            this._createAdditionGroupBox.TabStop = false;
+            this._createAdditionGroupBox.Text = "加料清單操作";
+            // 
+            // _additionPriceTextBox
+            // 
+            this._additionPriceTextBox.Location = new System.Drawing.Point(162, 179);
+            this._additionPriceTextBox.Name = "_additionPriceTextBox";
+            this._additionPriceTextBox.Size = new System.Drawing.Size(150, 22);
+            this._additionPriceTextBox.TabIndex = 6;
+            // 
+            // _additionNameTextBox
+            // 
+            this._additionNameTextBox.Location = new System.Drawing.Point(162, 124);
+            this._additionNameTextBox.Name = "_additionNameTextBox";
+            this._additionNameTextBox.Size = new System.Drawing.Size(150, 22);
+            this._additionNameTextBox.TabIndex = 5;
+            // 
+            // _additionPriceLabel
+            // 
+            this._additionPriceLabel.AutoSize = true;
+            this._additionPriceLabel.Location = new System.Drawing.Point(67, 182);
+            this._additionPriceLabel.Name = "_additionPriceLabel";
+            this._additionPriceLabel.Size = new System.Drawing.Size(35, 12);
+            this._additionPriceLabel.TabIndex = 4;
+            this._additionPriceLabel.Text = "價格 :";
+            // 
+            // _additionNameLabel
+            // 
+            this._additionNameLabel.AutoSize = true;
+            this._additionNameLabel.Location = new System.Drawing.Point(43, 127);
+            this._additionNameLabel.Name = "_additionNameLabel";
+            this._additionNameLabel.Size = new System.Drawing.Size(59, 12);
+            this._additionNameLabel.TabIndex = 3;
+            this._additionNameLabel.Text = "加料名稱 :";
+            // 
+            // _readAdditionFromFileButton
+            // 
+            this._readAdditionFromFileButton.Location = new System.Drawing.Point(162, 21);
+            this._readAdditionFromFileButton.Name = "_readAdditionFromFileButton";
+            this._readAdditionFromFileButton.Size = new System.Drawing.Size(150, 60);
+            this._readAdditionFromFileButton.TabIndex = 2;
+            this._readAdditionFromFileButton.Text = "從檔案匯入";
+            this._readAdditionFromFileButton.UseVisualStyleBackColor = true;
+            // 
+            // _createAdditionButton
+            // 
+            this._createAdditionButton.Location = new System.Drawing.Point(6, 21);
+            this._createAdditionButton.Name = "_createAdditionButton";
+            this._createAdditionButton.Size = new System.Drawing.Size(150, 60);
+            this._createAdditionButton.TabIndex = 1;
+            this._createAdditionButton.Text = "新增";
+            this._createAdditionButton.UseVisualStyleBackColor = true;
+            this._createAdditionButton.Click += new System.EventHandler(this.ClickCreateAdditionButton);
+            // 
+            // _createDrinkGroupBox
+            // 
+            this._createDrinkGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._createDrinkGroupBox.Controls.Add(this._drinkPriceTextBox);
+            this._createDrinkGroupBox.Controls.Add(this._drinkNameTextBox);
+            this._createDrinkGroupBox.Controls.Add(this._drinkPriceLabel);
+            this._createDrinkGroupBox.Controls.Add(this._drinkNameLabel);
+            this._createDrinkGroupBox.Controls.Add(this._readDrinkFromFileButton);
+            this._createDrinkGroupBox.Controls.Add(this._createDrinkButton);
+            this._createDrinkGroupBox.Location = new System.Drawing.Point(337, 6);
+            this._createDrinkGroupBox.Name = "_createDrinkGroupBox";
+            this._createDrinkGroupBox.Size = new System.Drawing.Size(318, 256);
+            this._createDrinkGroupBox.TabIndex = 3;
+            this._createDrinkGroupBox.TabStop = false;
+            this._createDrinkGroupBox.Text = "飲料清單操作";
+            // 
+            // _drinkPriceTextBox
+            // 
+            this._drinkPriceTextBox.Location = new System.Drawing.Point(162, 164);
+            this._drinkPriceTextBox.Name = "_drinkPriceTextBox";
+            this._drinkPriceTextBox.Size = new System.Drawing.Size(150, 22);
+            this._drinkPriceTextBox.TabIndex = 5;
+            // 
+            // _drinkNameTextBox
+            // 
+            this._drinkNameTextBox.Location = new System.Drawing.Point(162, 116);
+            this._drinkNameTextBox.Name = "_drinkNameTextBox";
+            this._drinkNameTextBox.Size = new System.Drawing.Size(150, 22);
+            this._drinkNameTextBox.TabIndex = 4;
+            // 
+            // _drinkPriceLabel
+            // 
+            this._drinkPriceLabel.AutoSize = true;
+            this._drinkPriceLabel.Location = new System.Drawing.Point(67, 164);
+            this._drinkPriceLabel.Name = "_drinkPriceLabel";
+            this._drinkPriceLabel.Size = new System.Drawing.Size(35, 12);
+            this._drinkPriceLabel.TabIndex = 3;
+            this._drinkPriceLabel.Text = "價格 :";
+            // 
+            // _drinkNameLabel
+            // 
+            this._drinkNameLabel.AutoSize = true;
+            this._drinkNameLabel.Location = new System.Drawing.Point(43, 119);
+            this._drinkNameLabel.Name = "_drinkNameLabel";
+            this._drinkNameLabel.Size = new System.Drawing.Size(59, 12);
+            this._drinkNameLabel.TabIndex = 2;
+            this._drinkNameLabel.Text = "飲料名稱 :";
+            // 
+            // _readDrinkFromFileButton
+            // 
+            this._readDrinkFromFileButton.Location = new System.Drawing.Point(162, 21);
+            this._readDrinkFromFileButton.Name = "_readDrinkFromFileButton";
+            this._readDrinkFromFileButton.Size = new System.Drawing.Size(150, 60);
+            this._readDrinkFromFileButton.TabIndex = 1;
+            this._readDrinkFromFileButton.Text = "從檔案匯入";
+            this._readDrinkFromFileButton.UseVisualStyleBackColor = true;
+            // 
+            // _createDrinkButton
+            // 
+            this._createDrinkButton.Location = new System.Drawing.Point(6, 21);
+            this._createDrinkButton.Name = "_createDrinkButton";
+            this._createDrinkButton.Size = new System.Drawing.Size(150, 60);
+            this._createDrinkButton.TabIndex = 0;
+            this._createDrinkButton.Text = "新增";
+            this._createDrinkButton.UseVisualStyleBackColor = true;
+            this._createDrinkButton.Click += new System.EventHandler(this.ClickCreateDrinkButton);
+            // 
+            // _backEndAdditionGroupBox
+            // 
+            this._backEndAdditionGroupBox.AutoSize = true;
+            this._backEndAdditionGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._backEndAdditionGroupBox.Controls.Add(this._backEndAdditionManagement);
+            this._backEndAdditionGroupBox.Location = new System.Drawing.Point(661, 6);
+            this._backEndAdditionGroupBox.Name = "_backEndAdditionGroupBox";
+            this._backEndAdditionGroupBox.Size = new System.Drawing.Size(360, 520);
+            this._backEndAdditionGroupBox.TabIndex = 2;
+            this._backEndAdditionGroupBox.TabStop = false;
+            this._backEndAdditionGroupBox.Text = "加料清單";
+            // 
+            // _backEndAdditionManagement
+            // 
+            this._backEndAdditionManagement.AllowUserToAddRows = false;
+            this._backEndAdditionManagement.AllowUserToResizeColumns = false;
+            this._backEndAdditionManagement.AllowUserToResizeRows = false;
+            this._backEndAdditionManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._backEndAdditionManagement.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this._backEndAdditionManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._backEndAdditionManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._backEndDeleteAdditionButton,
+            this._backEndAdditionName,
+            this._backEndAdditionPrice});
+            this._backEndAdditionManagement.Location = new System.Drawing.Point(6, 21);
+            this._backEndAdditionManagement.Name = "_backEndAdditionManagement";
+            this._backEndAdditionManagement.RowHeadersVisible = false;
+            this._backEndAdditionManagement.RowTemplate.Height = 24;
+            this._backEndAdditionManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this._backEndAdditionManagement.Size = new System.Drawing.Size(348, 478);
+            this._backEndAdditionManagement.TabIndex = 0;
+            // 
+            // _backEndDeleteAdditionButton
+            // 
+            this._backEndDeleteAdditionButton.HeaderText = "";
+            this._backEndDeleteAdditionButton.Name = "_backEndDeleteAdditionButton";
+            // 
+            // _backEndAdditionName
+            // 
+            this._backEndAdditionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._backEndAdditionName.HeaderText = "名稱";
+            this._backEndAdditionName.Name = "_backEndAdditionName";
+            this._backEndAdditionName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _backEndAdditionPrice
+            // 
+            this._backEndAdditionPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._backEndAdditionPrice.HeaderText = "價格";
+            this._backEndAdditionPrice.Name = "_backEndAdditionPrice";
+            this._backEndAdditionPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this._backEndAdditionPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // _drinkListGroupBox
+            // 
+            this._drinkListGroupBox.AutoSize = true;
+            this._drinkListGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._drinkListGroupBox.Controls.Add(this._backEndDrinkManagement);
+            this._drinkListGroupBox.Location = new System.Drawing.Point(6, 6);
+            this._drinkListGroupBox.Name = "_drinkListGroupBox";
+            this._drinkListGroupBox.Size = new System.Drawing.Size(325, 520);
+            this._drinkListGroupBox.TabIndex = 1;
+            this._drinkListGroupBox.TabStop = false;
+            this._drinkListGroupBox.Text = "飲料清單";
+            // 
+            // _backEndDrinkManagement
+            // 
+            this._backEndDrinkManagement.AllowUserToAddRows = false;
+            this._backEndDrinkManagement.AllowUserToResizeColumns = false;
+            this._backEndDrinkManagement.AllowUserToResizeRows = false;
+            this._backEndDrinkManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._backEndDrinkManagement.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this._backEndDrinkManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._backEndDrinkManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._backEndDeleteDrinkButton,
+            this._backEndDrinkName,
+            this._backEndDrinkPrice});
+            this._backEndDrinkManagement.Location = new System.Drawing.Point(6, 21);
+            this._backEndDrinkManagement.Name = "_backEndDrinkManagement";
+            this._backEndDrinkManagement.RowHeadersVisible = false;
+            this._backEndDrinkManagement.RowTemplate.Height = 24;
+            this._backEndDrinkManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this._backEndDrinkManagement.Size = new System.Drawing.Size(313, 478);
+            this._backEndDrinkManagement.TabIndex = 0;
+            // 
+            // _backEndDeleteDrinkButton
+            // 
+            this._backEndDeleteDrinkButton.HeaderText = "";
+            this._backEndDeleteDrinkButton.Name = "_backEndDeleteDrinkButton";
+            // 
+            // _backEndDrinkName
+            // 
+            this._backEndDrinkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._backEndDrinkName.HeaderText = "飲料名稱";
+            this._backEndDrinkName.Name = "_backEndDrinkName";
+            this._backEndDrinkName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _backEndDrinkPrice
+            // 
+            this._backEndDrinkPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._backEndDrinkPrice.HeaderText = "價格";
+            this._backEndDrinkPrice.Name = "_backEndDrinkPrice";
+            this._backEndDrinkPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this._backEndDrinkPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // _ezDrinkMenuStrip
+            // 
+            this._ezDrinkMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._fileToolStripMenuItem,
+            this._helpToolStripMenuItem});
+            this._ezDrinkMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this._ezDrinkMenuStrip.Name = "_ezDrinkMenuStrip";
+            this._ezDrinkMenuStrip.Size = new System.Drawing.Size(1074, 24);
+            this._ezDrinkMenuStrip.TabIndex = 2;
+            this._ezDrinkMenuStrip.Text = "menuStrip1";
+            // 
+            // _fileToolStripMenuItem
+            // 
+            this._fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._exitToolStripMenuItem});
+            this._fileToolStripMenuItem.Name = "_fileToolStripMenuItem";
+            this._fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this._fileToolStripMenuItem.Text = "File";
+            // 
+            // _exitToolStripMenuItem
+            // 
+            this._exitToolStripMenuItem.Name = "_exitToolStripMenuItem";
+            this._exitToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this._exitToolStripMenuItem.Text = "Exit";
+            this._exitToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
+            // 
+            // _helpToolStripMenuItem
+            // 
+            this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._aboutToolStripMenuItem});
+            this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
+            this._helpToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this._helpToolStripMenuItem.Text = "Help";
+            // 
+            // _aboutToolStripMenuItem
+            // 
+            this._aboutToolStripMenuItem.Name = "_aboutToolStripMenuItem";
+            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this._aboutToolStripMenuItem.Text = "About";
+            this._aboutToolStripMenuItem.Click += new System.EventHandler(this.ClickToolStripMenuItem);
+            // 
             // EzDrinkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1059, 606);
+            this.ClientSize = new System.Drawing.Size(1074, 606);
             this.Controls.Add(this._tabControl);
             this.Controls.Add(this._ezDrinkMenuStrip);
             this.MainMenuStrip = this._ezDrinkMenuStrip;
@@ -616,9 +761,13 @@ namespace EzDrink
             ((System.ComponentModel.ISupportInitialize)(this._drinkMenu)).EndInit();
             this._backEndManageTabPage.ResumeLayout(false);
             this._backEndManageTabPage.PerformLayout();
+            this._createAdditionGroupBox.ResumeLayout(false);
+            this._createAdditionGroupBox.PerformLayout();
+            this._createDrinkGroupBox.ResumeLayout(false);
+            this._createDrinkGroupBox.PerformLayout();
             this._backEndAdditionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._backEndAdditionManagement)).EndInit();
-            this._drinkListgroupBox.ResumeLayout(false);
+            this._drinkListGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._backEndDrinkManagement)).EndInit();
             this._ezDrinkMenuStrip.ResumeLayout(false);
             this._ezDrinkMenuStrip.PerformLayout();
@@ -658,26 +807,42 @@ namespace EzDrink
 
         // back end management
         private TabPage _backEndManageTabPage;
-        private GroupBox _drinkListgroupBox;
+        private GroupBox _drinkListGroupBox;
         private DataGridView _backEndDrinkManagement;
         private GroupBox _backEndAdditionGroupBox;
         private DataGridView _backEndAdditionManagement;
         private DataGridViewButtonColumn _backEndDeleteDrinkButton;
         private DataGridViewTextBoxColumn _backEndDrinkName;
         private DataGridViewTextBoxColumn _backEndDrinkPrice;
-        private DataGridViewButtonColumn _backEndDeleteAdditionButton;
-        private DataGridViewTextBoxColumn _backEndAdditionName;
-        private DataGridViewTextBoxColumn _backEndAdditionPrice;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
         private DataGridViewTextBoxColumn _orderedDrinkName;
         private DataGridViewTextBoxColumn _orderedDrinkPrice;
         private DataGridViewTextBoxColumn _orderedSugar;
         private DataGridViewTextBoxColumn _orderedIceLevel;
         private DataGridViewTextBoxColumn _orderedAddition;
         private DataGridViewButtonColumn _orderedDeleteButton;
+
+        // Tool Strip Menu Item
+        private ToolStripMenuItem _fileToolStripMenuItem;
+        private ToolStripMenuItem _exitToolStripMenuItem;
+        private ToolStripMenuItem _helpToolStripMenuItem;
+        private ToolStripMenuItem _aboutToolStripMenuItem;
+        private GroupBox _createAdditionGroupBox;
+        private Label _additionPriceLabel;
+        private Label _additionNameLabel;
+        private Button _readAdditionFromFileButton;
+        private Button _createAdditionButton;
+        private GroupBox _createDrinkGroupBox;
+        private Label _drinkPriceLabel;
+        private Label _drinkNameLabel;
+        private Button _readDrinkFromFileButton;
+        private Button _createDrinkButton;
+        private TextBox _additionPriceTextBox;
+        private TextBox _additionNameTextBox;
+        private TextBox _drinkPriceTextBox;
+        private TextBox _drinkNameTextBox;
+        private DataGridViewButtonColumn _backEndDeleteAdditionButton;
+        private DataGridViewTextBoxColumn _backEndAdditionName;
+        private DataGridViewTextBoxColumn _backEndAdditionPrice;
     }
 }
 

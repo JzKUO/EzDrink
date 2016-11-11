@@ -17,20 +17,22 @@ namespace EzDrink
             InitializeComponent();
         }
 
-        static AboutMessageBox _aboutMessageBox;
-        static DialogResult _result = DialogResult.No;
+        private AboutMessageBox _aboutMessageBox;
+        private DialogResult _result = DialogResult.No;
 
-        public static DialogResult ShowAbout()
+        // show about message box
+        public DialogResult ShowAbout()
         {
             _aboutMessageBox = new AboutMessageBox();
             _aboutMessageBox.ShowDialog();
             return _result;
         }
 
+        // close about message box handler
         private void ClickSureButton(object sender, EventArgs e)
         {
             _result = DialogResult.Yes;
-            _aboutMessageBox.Close();
+            Close();
         }
     }
 }

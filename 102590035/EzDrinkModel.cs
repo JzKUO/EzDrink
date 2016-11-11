@@ -64,34 +64,10 @@ namespace EzDrink
         public void BuyDrink(int rowIndex)
         {
             Drink drink = _drinks[rowIndex];
-            //Order foundInOrder = null;
-            //FoundInOrder(drink, ref foundInOrder);
-            //if (foundInOrder == null)
-            //{
-            //    Order order = new Order(drink);
-            //    _orders.Add(order);
-            //    _orderedDrinkCount++;
-            //}
-            //else
-            //{
-            //    foundInOrder.Increase();
-            //}
             Order order = new Order(drink);
             _orders.Add(order);
             _orderedDrinkCount++;
         }
-
-        // find if drink already exist in order
-        //private void FoundInOrder(Drink drink, ref Order foundOrder)
-        //{
-        //    foreach (Order order in _orders)
-        //    {
-        //        if (order.GetDrink().Equals(drink))
-        //        {
-        //            foundOrder = order;
-        //        }
-        //    }
-        //}
 
         // change selected ordered drink
         public void ChangeSelectedOrderedDrink(int rowIndex)
@@ -100,7 +76,7 @@ namespace EzDrink
             {
                 _selectedOrderedDrinkRowIndex = rowIndex;
             }
-            //Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
+            Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
         }
 
         // change addition in ordered drinks
@@ -121,7 +97,7 @@ namespace EzDrink
         {
             if (_orderedDrinkCount > 0)
             {
-                _orders[_selectedOrderedDrinkRowIndex].ChangeSugar(sugar);
+                _orders[_selectedOrderedDrinkRowIndex].SetSugar(sugar);
             }
         }
 
@@ -130,7 +106,7 @@ namespace EzDrink
         {
             if (_orderedDrinkCount > 0)
             {
-                _orders[_selectedOrderedDrinkRowIndex].ChangeIceLevel(iceLevel);
+                _orders[_selectedOrderedDrinkRowIndex].SetIceLevel(iceLevel);
             }
         }
 

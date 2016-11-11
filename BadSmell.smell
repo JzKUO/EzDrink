@@ -198,30 +198,6 @@
               <Comment />
               <Auto>false</Auto>
             </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>ICS(函式-4)</SmellType>
-              <HashCode>Method4.Order.ChangeSugar</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>EzDrink</Project>
-              <File>Order.cs</File>
-              <Line>100</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>ICS(函式-4)</SmellType>
-              <HashCode>Method4.Order.ChangeIceLevel</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>EzDrink</Project>
-              <File>Order.cs</File>
-              <Line>106</Line>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
           </Reviews>
           <HashCodeIgnoreList>
             <string>SpacingAndNewLine17.DrinkModel.cs.2.        }.    }</string>
@@ -252,6 +228,16 @@
                 <RelativePath>EzDrinkModel.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>MsgBox.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>MsgBox.Designer.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Order.cs</RelativePath>
@@ -285,7 +271,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1057</ProductionLoc>
+          <ProductionLoc>1679</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

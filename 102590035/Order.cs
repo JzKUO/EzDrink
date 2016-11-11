@@ -97,13 +97,13 @@ namespace EzDrink
         }
 
         // change sugar level
-        internal void ChangeSugar(string sugar)
+        internal void SetSugar(string sugar)
         {
             _sugar = sugar;
         }
 
         // change ice level
-        internal void ChangeIceLevel(string iceLevel)
+        internal void SetIceLevel(string iceLevel)
         {
             _iceLevel = iceLevel;
         }

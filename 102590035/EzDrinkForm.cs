@@ -39,12 +39,12 @@ namespace EzDrink
         // Form initialize event handler
         private void LoadForm(object sender, EventArgs e)
         {
-            InitializeDrinkMenuView();
-            InitializeAdditionView();
+            InitializeDrinksMenuView();
+            InitializeAdditionsView();
         }
 
         // initialize drink menu view
-        private void InitializeDrinkMenuView()
+        private void InitializeDrinksMenuView()
         {
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
             {
@@ -53,7 +53,7 @@ namespace EzDrink
         }
 
         // initialize additions view
-        private void InitializeAdditionView()
+        private void InitializeAdditionsView()
         {
             foreach (DrinkAddition drinkAddition in _ezDrinkModel.GetDrinkAdditions())
             {
@@ -62,7 +62,7 @@ namespace EzDrink
         }
 
         // Add drink order event handler
-        private void ClickDrinkMenuCell(object sender, DataGridViewCellEventArgs e)
+        private void ClickDrinksMenuCell(object sender, DataGridViewCellEventArgs e)
         {
             if (IsValidRow(e.RowIndex))
             {
@@ -70,37 +70,36 @@ namespace EzDrink
                 {
                     _ezDrinkModel.BuyDrink(e.RowIndex);
                     _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
-                    RefreshView();
+                    RefreshOrdersView(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                 }
             }
         }
 
         // click drink order handler
-        private void ClickDrinkOrderedCell(object sender, DataGridViewCellEventArgs e)
+        private void ClickOrdersCell(object sender, DataGridViewCellEventArgs e)
         {
             if (IsValidRow(e.RowIndex))
             {
                 if (!IsDeleteOrderButton(e.ColumnIndex))
                 {
                     _ezDrinkModel.ChangeSelectedOrderedDrink(e.RowIndex);
+                    Console.WriteLine(_drinkOrdered.CurrentCell);
                 }
                 else
                 {
-                    if (IsDeleteOrderButton(e.ColumnIndex))
-                    {
-                        _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
-                        _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
-                        RefreshView();
-                    }
+                    _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
+                    _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
+                    RefreshOrdersView(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                 }
             }
         }
 
         // click addition handler
-        private void ClickDrinkAdditionMenuCell(object sender, DataGridViewCellEventArgs e)
+        private void ClickDrinkAdditionsMenuCell(object sender, DataGridViewCellEventArgs e)
         {
             _ezDrinkModel.AddAddition(e.RowIndex);
-            RefreshView();
+            RefreshOrdersView(_drinkOrdered.CurrentRow.Index);
+
         }
 
         // check if click on add button
@@ -122,24 +121,27 @@ namespace EzDrink
         }
 
         // refresh view
-        private void RefreshView()
+        private void RefreshOrdersView(int index)
         {
-            ClearOrderView();
-            ProduceOrder();
+            ClearOrdersView();
+            ProduceOrdersView();
+            _drinkOrdered.CurrentCell = _drinkOrdered.Rows[index].Cells[0];
+            _drinkOrdered.Rows[index].Selected = true;
+            Console.WriteLine(_drinkOrdered.CurrentCell);
         }
 
         // clear order view
-        private void ClearOrderView()
+        private void ClearOrdersView()
         {
             _drinkOrdered.Rows.Clear();
         }
 
         // regenerate order view
-        private void ProduceOrder()
+        private void ProduceOrdersView()
         {
             foreach (Order order in _ezDrinkModel.GetOrders())
             {
-                if (order.GetCount() != 0)
+                if (order.GetCount() > 0)
                 {
                     _drinkOrdered.Rows.Add(new object[] { order.GetDrinkName(), order.GetTotalPrice(), order.GetSugar(), order.GetIceLevel(), order.GetAdditionsInString(order), ORDER_BUTTON_TEXT });
                 }
@@ -151,7 +153,7 @@ namespace EzDrink
         {
             Button button = (Button)sender;
             _ezDrinkModel.ChangeSugar(button.Text);
-            RefreshView();
+            RefreshOrdersView(_drinkOrdered.CurrentRow.Index);
         }
 
         // click change ice level handler
@@ -159,7 +161,7 @@ namespace EzDrink
         {
             Button button = (Button)sender;
             _ezDrinkModel.ChangeIceLevel(button.Text);
-            RefreshView();
+            RefreshOrdersView(_drinkOrdered.CurrentRow.Index);
         }
 
         // click tool strip menu item handler
@@ -172,8 +174,27 @@ namespace EzDrink
                     Application.Exit();
                     break;
                 case "About":
-                    AboutMessageBox.ShowAbout();
+                    AboutMessageBox about = new AboutMessageBox();
+                    about.ShowAbout();
                     break;
+            }
+        }
+
+        // create drink handler
+        private void ClickCreateDrinkButton(object sender, EventArgs e)
+        {
+            if (_drinkNameTextBox.Text != "" && _drinkPriceTextBox.Text != "")
+            {
+                _backEndDrinkManagement.Rows.Add(new object[] { ORDER_BUTTON_TEXT, _drinkNameTextBox.Text, _drinkPriceTextBox.Text });
+            }
+        }
+
+        // create addition handler
+        private void ClickCreateAdditionButton(object sender, EventArgs e)
+        {
+            if (_additionNameTextBox.Text != "" && _additionPriceTextBox.Text != "")
+            {
+                _backEndAdditionManagement.Rows.Add(new object[] { ORDER_BUTTON_TEXT, _additionNameTextBox.Text, _additionPriceTextBox.Text });
             }
         }
     }

@@ -7,13 +7,14 @@ namespace EzDrink
     {
         private List<Drink> _drinks;
         private List<Order> _orders;
+        private List<Orders> _ordersList;
         private List<DrinkAddition> _drinkAdditions;
         private readonly string[] _drinkNames = { "茉莉綠茶", "阿薩姆紅茶", "高山清茶", "鐵觀音", "烏龍清茶" };
         private readonly string[] _additionNames = { "珍珠", "椰果", "仙草", "布丁" };
         private readonly int[] _drinkPrices = { 20, 25, 40, 50, 30 };
         private readonly int[] _additionPrices = { 5, 5, 10, 10 };
-        private int _selectedOrderedDrinkRowIndex;
-        private int _orderedDrinkCount;
+        private int _selectedOrderRowIndex;
+        private int _ordersCount;
 
         public EzDrinkModel()
         {
@@ -26,11 +27,11 @@ namespace EzDrink
         private void InitializeOrders()
         {
             _orders = new List<Order>();
-            _selectedOrderedDrinkRowIndex = 0;
-            _orderedDrinkCount = 0;
+            _selectedOrderRowIndex = 0;
+            _ordersCount = 0;
         }
 
-        // Initailize drink list
+        // Initailize drinks list
         private void InitializeDrinks()
         {
             _drinks = new List<Drink>();
@@ -41,7 +42,7 @@ namespace EzDrink
             }
         }
 
-        // Initailize drinkAddition list
+        // Initailize drinkAdditions list
         private void InitializeAdditions()
         {
             _drinkAdditions = new List<DrinkAddition>();
@@ -52,61 +53,61 @@ namespace EzDrink
             }
         }
 
-        // remove drink from order
-        public void RemoveOrderedDrink(int rowIndex)
+        // remove order from orders
+        public void RemoveOrder(int rowIndex)
         {
             Order order = _orders[rowIndex];
             _orders.Remove(order);
-            _orderedDrinkCount--;
+            _ordersCount--;
         }
 
-        // add one drink
+        // add one order
         public void BuyDrink(int rowIndex)
         {
             Drink drink = _drinks[rowIndex];
             Order order = new Order(drink);
             _orders.Add(order);
-            _orderedDrinkCount++;
+            _ordersCount++;
         }
 
-        // change selected ordered drink
-        public void ChangeSelectedOrderedDrink(int rowIndex)
+        // change selected order
+        public void ChangeSelectedOrder(int rowIndex)
         {
             if (rowIndex >= 0)
             {
-                _selectedOrderedDrinkRowIndex = rowIndex;
+                _selectedOrderRowIndex = rowIndex;
             }
-            Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
+            //Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
         }
 
-        // change addition in ordered drinks
+        // add addition of order in orders
         public void AddAddition(int rowIndex)
         {
             DrinkAddition addition = _drinkAdditions[rowIndex];
-            if (_orderedDrinkCount > 0)
+            if (_ordersCount > 0)
             {
-                if (!_orders[_selectedOrderedDrinkRowIndex].IsAlreadyAddedAddition(addition))
+                if (!_orders[_selectedOrderRowIndex].IsAlreadyAddedAddition(addition))
                 {
-                    _orders[_selectedOrderedDrinkRowIndex].AddAddition(addition);
+                    _orders[_selectedOrderRowIndex].AddAddition(addition);
                 }
             }
         }
 
-        // change addition in ordered drinks
+        // change sugar of order in orders
         public void ChangeSugar(string sugar)
         {
-            if (_orderedDrinkCount > 0)
+            if (_ordersCount > 0)
             {
-                _orders[_selectedOrderedDrinkRowIndex].SetSugar(sugar);
+                _orders[_selectedOrderRowIndex].SetSugar(sugar);
             }
         }
 
-        // change addition in ordered drinks
+        // change ice level of order in orders
         public void ChangeIceLevel(string iceLevel)
         {
-            if (_orderedDrinkCount > 0)
+            if (_ordersCount > 0)
             {
-                _orders[_selectedOrderedDrinkRowIndex].SetIceLevel(iceLevel);
+                _orders[_selectedOrderRowIndex].SetIceLevel(iceLevel);
             }
         }
 
@@ -131,7 +132,7 @@ namespace EzDrink
         // get how many drinks in order list
         public int GetOrderedDrinkCount()
         {
-            return _orderedDrinkCount;
+            return _ordersCount;
         }
     }
 }

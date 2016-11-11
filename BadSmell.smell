@@ -188,6 +188,18 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
+              <SmellType>Literal constants(字面常數)-" is be selected!"</SmellType>
+              <HashCode>LiteralConstants.ChangeSelectedOrder." is be selected!"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>EzDrinkModel.cs</File>
+              <Line>79</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
               <SmellType>Literal constants(字面常數)-", "</SmellType>
               <HashCode>LiteralConstants.GetAdditionsInString.", "</HashCode>
               <Severity>Red</Severity>
@@ -271,7 +283,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1679</ProductionLoc>
+          <ProductionLoc>1680</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

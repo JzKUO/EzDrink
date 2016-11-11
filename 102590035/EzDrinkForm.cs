@@ -14,6 +14,7 @@ namespace EzDrink
     public partial class EzDrinkForm : Form
     {
         private EzDrinkModel _ezDrinkModel;
+        private PresentationModel _presentationModel;
 
         public const int DRINK_BUTTON_COLUMN_INDEX = 0;
         public const int DRINK_NAME_COLUMN_INDEX = 1;
@@ -30,9 +31,10 @@ namespace EzDrink
         private const string MENU_BUTTON_TEXT = "選擇";
         private const string ORDER_BUTTON_TEXT = "刪除";
 
-        public EzDrinkForm(EzDrinkModel ezDrinkModel)
+        public EzDrinkForm(EzDrinkModel ezDrinkModel, PresentationModel presentationModel)
         {
             this._ezDrinkModel = ezDrinkModel;
+            this._presentationModel = presentationModel;
             InitializeComponent();
         }
 
@@ -69,7 +71,7 @@ namespace EzDrink
                 if (IsAddDrinkButton(e.ColumnIndex))
                 {
                     _ezDrinkModel.BuyDrink(e.RowIndex);
-                    _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
+                    _ezDrinkModel.ChangeSelectedOrder(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                     RefreshOrdersView(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                 }
             }
@@ -82,13 +84,13 @@ namespace EzDrink
             {
                 if (!IsDeleteOrderButton(e.ColumnIndex))
                 {
-                    _ezDrinkModel.ChangeSelectedOrderedDrink(e.RowIndex);
+                    _ezDrinkModel.ChangeSelectedOrder(e.RowIndex);
                     Console.WriteLine(_drinkOrdered.CurrentCell);
                 }
                 else
                 {
-                    _ezDrinkModel.RemoveOrderedDrink(e.RowIndex);
-                    _ezDrinkModel.ChangeSelectedOrderedDrink(_ezDrinkModel.GetOrderedDrinkCount() - 1);
+                    _ezDrinkModel.RemoveOrder(e.RowIndex);
+                    _ezDrinkModel.ChangeSelectedOrder(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                     RefreshOrdersView(_ezDrinkModel.GetOrderedDrinkCount() - 1);
                 }
             }
@@ -120,7 +122,7 @@ namespace EzDrink
             return columnIndex == ORDER_DELETE_COLUMN_INDEX;
         }
 
-        // refresh view
+        // refresh orders view
         private void RefreshOrdersView(int index)
         {
             ClearOrdersView();
@@ -130,13 +132,13 @@ namespace EzDrink
             Console.WriteLine(_drinkOrdered.CurrentCell);
         }
 
-        // clear order view
+        // clear orders view
         private void ClearOrdersView()
         {
             _drinkOrdered.Rows.Clear();
         }
 
-        // regenerate order view
+        // regenerate orders view
         private void ProduceOrdersView()
         {
             foreach (Order order in _ezDrinkModel.GetOrders())
@@ -183,7 +185,9 @@ namespace EzDrink
         // create drink handler
         private void ClickCreateDrinkButton(object sender, EventArgs e)
         {
-            if (_drinkNameTextBox.Text != "" && _drinkPriceTextBox.Text != "")
+            string name = _drinkNameTextBox.Text;
+            string price = _drinkPriceTextBox.Text;
+            if (_presentationModel.IsValidInput(name, price))
             {
                 _backEndDrinkManagement.Rows.Add(new object[] { ORDER_BUTTON_TEXT, _drinkNameTextBox.Text, _drinkPriceTextBox.Text });
             }
@@ -192,7 +196,9 @@ namespace EzDrink
         // create addition handler
         private void ClickCreateAdditionButton(object sender, EventArgs e)
         {
-            if (_additionNameTextBox.Text != "" && _additionPriceTextBox.Text != "")
+            string name = _additionNameTextBox.Text;
+            string price = _additionPriceTextBox.Text;
+            if (_presentationModel.IsValidInput(name, price))
             {
                 _backEndAdditionManagement.Rows.Add(new object[] { ORDER_BUTTON_TEXT, _additionNameTextBox.Text, _additionPriceTextBox.Text });
             }

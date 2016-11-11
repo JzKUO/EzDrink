@@ -15,10 +15,11 @@ namespace EzDrink
         static void Main()
         {
             EzDrinkModel ezDrinkModel = new EzDrinkModel();
+            PresentationModel presentationModel = new PresentationModel();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EzDrinkForm(ezDrinkModel));
+            Application.Run(new EzDrinkForm(ezDrinkModel, presentationModel));
         }
     }
 }

@@ -8,13 +8,8 @@ namespace EzDrink
         private List<Drink> _drinks;
         private List<Order> _orders;
         private List<Orders> _ordersList;
-        private List<DrinkAddition> _drinkAdditions;
-        private readonly string[] _drinkNames = { "茉莉綠茶", "阿薩姆紅茶", "高山清茶", "鐵觀音", "烏龍清茶" };
-        private readonly string[] _additionNames = { "珍珠", "椰果", "仙草", "布丁" };
-        private readonly int[] _drinkPrices = { 20, 25, 40, 50, 30 };
-        private readonly int[] _additionPrices = { 5, 5, 10, 10 };
+        private List<Addition> _additions;
         private int _selectedOrderRowIndex;
-        private int _ordersCount;
 
         public EzDrinkModel()
         {
@@ -28,29 +23,32 @@ namespace EzDrink
         {
             _orders = new List<Order>();
             _selectedOrderRowIndex = 0;
-            _ordersCount = 0;
         }
 
         // Initailize drinks list
         private void InitializeDrinks()
         {
             _drinks = new List<Drink>();
-            for (int i = 0; i < _drinkNames.Length; i++)
-            {
-                Drink drink = new Drink(_drinkNames[i], _drinkPrices[i]);
-                _drinks.Add(drink);
-            }
         }
 
         // Initailize drinkAdditions list
         private void InitializeAdditions()
         {
-            _drinkAdditions = new List<DrinkAddition>();
-            for (int i = 0; i < _additionNames.Length; i++)
-            {
-                DrinkAddition drinkAddition = new DrinkAddition(_additionNames[i], _additionPrices[i]);
-                _drinkAdditions.Add(drinkAddition);
-            }
+            _additions = new List<Addition>();
+        }
+
+        // create drink
+        public void CreateDrink(string name, int price)
+        {
+            Drink drink = new Drink(name, price);
+            _drinks.Add(drink);
+        }
+
+        // create addition
+        public void CreateAddition(string name, int price)
+        {
+            Addition addition = new Addition(name, price);
+            _additions.Add(addition);
         }
 
         // remove order from orders
@@ -58,7 +56,7 @@ namespace EzDrink
         {
             Order order = _orders[rowIndex];
             _orders.Remove(order);
-            _ordersCount--;
+            Console.WriteLine(_orders.Count);
         }
 
         // add one order
@@ -67,7 +65,7 @@ namespace EzDrink
             Drink drink = _drinks[rowIndex];
             Order order = new Order(drink);
             _orders.Add(order);
-            _ordersCount++;
+            Console.WriteLine(_orders.Count);
         }
 
         // change selected order
@@ -83,8 +81,8 @@ namespace EzDrink
         // add addition of order in orders
         public void AddAddition(int rowIndex)
         {
-            DrinkAddition addition = _drinkAdditions[rowIndex];
-            if (_ordersCount > 0)
+            Addition addition = _additions[rowIndex];
+            if (_orders.Count > 0)
             {
                 if (!_orders[_selectedOrderRowIndex].IsAlreadyAddedAddition(addition))
                 {
@@ -96,7 +94,7 @@ namespace EzDrink
         // change sugar of order in orders
         public void ChangeSugar(string sugar)
         {
-            if (_ordersCount > 0)
+            if (_orders.Count > 0)
             {
                 _orders[_selectedOrderRowIndex].SetSugar(sugar);
             }
@@ -105,7 +103,7 @@ namespace EzDrink
         // change ice level of order in orders
         public void ChangeIceLevel(string iceLevel)
         {
-            if (_ordersCount > 0)
+            if (_orders.Count > 0)
             {
                 _orders[_selectedOrderRowIndex].SetIceLevel(iceLevel);
             }
@@ -117,10 +115,16 @@ namespace EzDrink
             return _drinks;
         }
 
-        // get all drinkAdditions in menu
-        public List<DrinkAddition> GetDrinkAdditions()
+        // get how many drinks in menu
+        public int GetDrinksCount()
         {
-            return _drinkAdditions;
+            return _drinks.Count;
+        }
+
+        // get all drinkAdditions in menu
+        public List<Addition> GetDrinkAdditions()
+        {
+            return _additions;
         }
 
         // get all drinks in order
@@ -130,9 +134,9 @@ namespace EzDrink
         }
 
         // get how many drinks in order list
-        public int GetOrderedDrinkCount()
+        public int GetOrdersCount()
         {
-            return _ordersCount;
+            return _orders.Count;
         }
     }
 }

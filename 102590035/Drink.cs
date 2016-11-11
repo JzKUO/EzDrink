@@ -10,12 +10,14 @@ namespace EzDrink
     {
         private string _name;
         private int _price;
+        private int _count;
 
         // Initialize drink
         public Drink(string name, int price)
         {
             this._name = name;
             this._price = price;
+            this._count = 0;
         }
 
         // get drink name
@@ -28,6 +30,18 @@ namespace EzDrink
         public int GetPrice()
         {
             return _price;
+        }
+
+        // get drinks count
+        public int GetCount()
+        {
+            return _count;
+        }
+
+        // increase drinks count
+        internal void IncreaseDrinksCount()
+        {
+            _count++;
         }
     }
 }

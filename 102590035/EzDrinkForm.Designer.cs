@@ -48,7 +48,7 @@ namespace EzDrink
             this._additionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._additionPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderGroupBox = new System.Windows.Forms.GroupBox();
-            this._drinkOrdered = new System.Windows.Forms.DataGridView();
+            this._orders = new System.Windows.Forms.DataGridView();
             this._orderedDrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedDrinkPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedSugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@ namespace EzDrink
             this._additionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).BeginInit();
             this._orderGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._drinkOrdered)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._orders)).BeginInit();
             this._menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._drinkMenu)).BeginInit();
             this._backEndManageTabPage.SuspendLayout();
@@ -304,7 +304,7 @@ namespace EzDrink
             // 
             this._orderGroupBox.AutoSize = true;
             this._orderGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._orderGroupBox.Controls.Add(this._drinkOrdered);
+            this._orderGroupBox.Controls.Add(this._orders);
             this._orderGroupBox.Location = new System.Drawing.Point(545, 6);
             this._orderGroupBox.Name = "_orderGroupBox";
             this._orderGroupBox.Size = new System.Drawing.Size(507, 527);
@@ -312,30 +312,30 @@ namespace EzDrink
             this._orderGroupBox.TabStop = false;
             this._orderGroupBox.Text = "點單";
             // 
-            // _drinkOrdered
+            // _Orders
             // 
-            this._drinkOrdered.AllowUserToAddRows = false;
-            this._drinkOrdered.AllowUserToDeleteRows = false;
-            this._drinkOrdered.AllowUserToResizeColumns = false;
-            this._drinkOrdered.AllowUserToResizeRows = false;
-            this._drinkOrdered.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._drinkOrdered.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this._drinkOrdered.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._drinkOrdered.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._orders.AllowUserToAddRows = false;
+            this._orders.AllowUserToDeleteRows = false;
+            this._orders.AllowUserToResizeColumns = false;
+            this._orders.AllowUserToResizeRows = false;
+            this._orders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._orders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this._orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._orderedDrinkName,
             this._orderedDrinkPrice,
             this._orderedSugar,
             this._orderedIceLevel,
             this._orderedAddition,
             this._orderedDeleteButton});
-            this._drinkOrdered.Location = new System.Drawing.Point(6, 21);
-            this._drinkOrdered.Name = "_drinkOrdered";
-            this._drinkOrdered.ReadOnly = true;
-            this._drinkOrdered.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this._drinkOrdered.RowTemplate.Height = 24;
-            this._drinkOrdered.Size = new System.Drawing.Size(495, 485);
-            this._drinkOrdered.TabIndex = 0;
-            this._drinkOrdered.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickOrdersCell);
+            this._orders.Location = new System.Drawing.Point(6, 21);
+            this._orders.Name = "_Orders";
+            this._orders.ReadOnly = true;
+            this._orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this._orders.RowTemplate.Height = 24;
+            this._orders.Size = new System.Drawing.Size(495, 485);
+            this._orders.TabIndex = 0;
+            this._orders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickOrdersCell);
             // 
             // _orderedDrinkName
             // 
@@ -452,7 +452,7 @@ namespace EzDrink
             this._backEndManageTabPage.Location = new System.Drawing.Point(4, 22);
             this._backEndManageTabPage.Name = "_backEndManageTabPage";
             this._backEndManageTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._backEndManageTabPage.Size = new System.Drawing.Size(1027, 548);
+            this._backEndManageTabPage.Size = new System.Drawing.Size(1054, 548);
             this._backEndManageTabPage.TabIndex = 1;
             this._backEndManageTabPage.Text = "後台管理";
             this._backEndManageTabPage.UseVisualStyleBackColor = true;
@@ -756,7 +756,7 @@ namespace EzDrink
             this._additionGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._drinkAdditions)).EndInit();
             this._orderGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._drinkOrdered)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._orders)).EndInit();
             this._menuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._drinkMenu)).EndInit();
             this._backEndManageTabPage.ResumeLayout(false);
@@ -783,7 +783,7 @@ namespace EzDrink
         private TabControl _tabControl;
         private TabPage _orderTabPage;
         private DataGridView _drinkMenu;
-        private DataGridView _drinkOrdered;
+        private DataGridView _orders;
         private DataGridView _drinkAdditions;
         private GroupBox _menuGroupBox;
         private GroupBox _orderGroupBox;

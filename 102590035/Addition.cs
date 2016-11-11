@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace EzDrink
 {
-    public class DrinkAddition
+    public class Addition
     {
         private string _name;
         private int _price;
 
-        // Initialize drinkAddition
-        public DrinkAddition(string name, int price)
+        // Initialize addition
+        public Addition(string name, int price)
         {
             this._name = name;
             this._price = price;
         }
 
         // get addition
-        public DrinkAddition GetAddition()
+        public Addition GetAddition()
         {
             return this;
         }
 
-        // get drinkAddition name
+        // get addition name
         public String GetName()
         {
             return _name;
         }
 
-        // get drinkAddition price
+        // get addition price
         public int GetPrice()
         {
             return _price;

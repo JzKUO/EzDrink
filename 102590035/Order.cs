@@ -9,19 +9,17 @@ namespace EzDrink
     public class Order
     {
         private Drink _drink;
-        private int _count;
         private string _sugar;
         private string _iceLevel;
-        private List<DrinkAddition> _additions;
+        private List<Addition> _additions;
 
         // initial order
         public Order(Drink drink)
         {
             _drink = drink;
-            _count = 1;
             _sugar = "";
             _iceLevel = "";
-            _additions = new List<DrinkAddition>();
+            _additions = new List<Addition>();
         }
 
         // get drink data in order
@@ -48,14 +46,8 @@ namespace EzDrink
             return _iceLevel;
         }
 
-        // get drink count in order
-        public int GetCount()
-        {
-            return _count;
-        }
-
         // get ordered drink additions
-        public List<DrinkAddition> GetAdditions()
+        public List<Addition> GetAdditions()
         {
             return _additions;
         }
@@ -65,7 +57,7 @@ namespace EzDrink
         {
             string[] additions = new string[0];
             int additionCount = 0;
-            foreach (DrinkAddition addition in order.GetAdditions())
+            foreach (Addition addition in order.GetAdditions())
             {
                 Array.Resize<string>(ref additions, additionCount + 1);
                 additions[additionCount] = addition.GetName();
@@ -74,18 +66,12 @@ namespace EzDrink
             return String.Join(", ", additions);
         }
 
-        // increase drink count in order
-        internal void Increase()
-        {
-            _count++;
-        }
-
         // get drink price sum
         public int GetTotalPrice()
         {
             int additionPrice = 0;
 
-            foreach (DrinkAddition addition in _additions)
+            foreach (Addition addition in _additions)
             {
                 if (addition.GetAddition().Equals(addition))
                 {
@@ -93,7 +79,7 @@ namespace EzDrink
                 }
             }
 
-            return (_drink.GetPrice() * _count) + additionPrice;
+            return _drink.GetPrice() + additionPrice;
         }
 
         // change sugar level
@@ -109,15 +95,15 @@ namespace EzDrink
         }
 
         // add addition into order
-        internal void AddAddition(DrinkAddition addition)
+        internal void AddAddition(Addition addition)
         {
             _additions.Add(addition);
         }
 
         // get if addition is already added
-        internal bool IsAlreadyAddedAddition(DrinkAddition addition)
+        internal bool IsAlreadyAddedAddition(Addition addition)
         {
-            foreach (DrinkAddition existAdditin in _additions)
+            foreach (Addition existAdditin in _additions)
             {
                 if (addition.Equals(existAdditin))
                     return true;

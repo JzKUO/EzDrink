@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drink.cs" />
-    <Compile Include="DrinkAddition.cs" />
+    <Compile Include="Addition.cs" />
     <Compile Include="EzDrinkForm.cs">
       <SubType>Form</SubType>
     </Compile>

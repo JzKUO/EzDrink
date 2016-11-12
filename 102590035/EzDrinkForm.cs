@@ -52,16 +52,16 @@ namespace EzDrink
         {
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
             {
-                _drinkMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
+                _drinksMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
             }
         }
 
         // initialize additions view
         private void InitializeAdditionsView()
         {
-            foreach (Addition drinkAddition in _ezDrinkModel.GetDrinkAdditions())
+            foreach (Addition drinkAddition in _ezDrinkModel.GetAdditions())
             {
-                _drinkAdditions.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drinkAddition.GetName(), drinkAddition.GetPrice() });
+                _additionsMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drinkAddition.GetName(), drinkAddition.GetPrice() });
             }
         }
 
@@ -104,8 +104,10 @@ namespace EzDrink
         private void ClickDrinkAdditionsMenuCell(object sender, DataGridViewCellEventArgs e)
         {
             _ezDrinkModel.AddAddition(e.RowIndex);
-            RefreshOrdersView(_orders.CurrentRow.Index);
-
+            if(_ezDrinkModel.GetOrdersCount() > 0)
+            {
+                RefreshOrdersView(_orders.CurrentRow.Index);
+            }
         }
 
         // click change sugar handler
@@ -113,7 +115,10 @@ namespace EzDrink
         {
             Button button = (Button)sender;
             _ezDrinkModel.ChangeSugar(button.Text);
-            RefreshOrdersView(_orders.CurrentRow.Index);
+            if (_ezDrinkModel.GetOrdersCount() > 0)
+            {
+                RefreshOrdersView(_orders.CurrentRow.Index);
+            }
         }
 
         // click change ice level handler
@@ -121,7 +126,10 @@ namespace EzDrink
         {
             Button button = (Button)sender;
             _ezDrinkModel.ChangeIceLevel(button.Text);
-            RefreshOrdersView(_orders.CurrentRow.Index);
+            if (_ezDrinkModel.GetOrdersCount() > 0)
+            {
+                RefreshOrdersView(_orders.CurrentRow.Index);
+            }
         }
 
         // click tool strip menu item handler
@@ -160,7 +168,7 @@ namespace EzDrink
             if (_presentationModel.IsValidInput(name, price))
             {
                 _ezDrinkModel.CreateAddition(name, Convert.ToInt32(price));
-                RefreshDrinksMenuView(0);
+                RefreshAdditionsView(0);
             }
         }
 
@@ -221,9 +229,9 @@ namespace EzDrink
             ProduceDrinksMenuView();
             if(_ezDrinkModel.GetDrinksCount() > 0)
             {
-                _drinkMenu.CurrentCell = _drinkMenu.Rows[index].Cells[0];
-                _drinkMenu.Rows[index].Selected = true;
-                Console.WriteLine(_drinkMenu.CurrentCell);
+                _drinksMenu.CurrentCell = _drinksMenu.Rows[index].Cells[0];
+                _drinksMenu.Rows[index].Selected = true;
+                Console.WriteLine(_drinksMenu.CurrentCell);
             }
         }
 
@@ -231,7 +239,7 @@ namespace EzDrink
         private void ClearDrinksMenuView()
         {
             _backEndDrinkManagement.Rows.Clear();
-            _drinkMenu.Rows.Clear();
+            _drinksMenu.Rows.Clear();
         }
 
         // regenerate drinks view
@@ -240,7 +248,37 @@ namespace EzDrink
             foreach (Drink drink in _ezDrinkModel.GetDrinks())
             {
                 _backEndDrinkManagement.Rows.Add(new object[] { DELETE_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
-                _drinkMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
+                _drinksMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, drink.GetName(), drink.GetPrice() });
+            }
+        }
+
+        // refresh orders view
+        private void RefreshAdditionsView(int index)
+        {
+            ClearAdditionsView();
+            ProduceAdditionsView();
+            if (_ezDrinkModel.GetAdditionsCount() > 0)
+            {
+                _additionsMenu.CurrentCell = _additionsMenu.Rows[index].Cells[0];
+                _additionsMenu.Rows[index].Selected = true;
+                Console.WriteLine(_additionsMenu.CurrentCell);
+            }
+        }
+
+        // clear additions view
+        private void ClearAdditionsView()
+        {
+            _backEndAdditionManagement.Rows.Clear();
+            _additionsMenu.Rows.Clear();
+        }
+
+        // regenerate additions view
+        private void ProduceAdditionsView()
+        {
+            foreach (Addition addition in _ezDrinkModel.GetAdditions())
+            {
+                _backEndAdditionManagement.Rows.Add(new object[] { DELETE_BUTTON_TEXT, addition.GetName(), addition.GetPrice() });
+                _additionsMenu.Rows.Add(new object[] { SELECT_BUTTON_TEXT, addition.GetName(), addition.GetPrice() });
             }
         }
     }

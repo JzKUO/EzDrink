@@ -115,14 +115,8 @@ namespace EzDrink
             return _drinks;
         }
 
-        // get how many drinks in menu
-        public int GetDrinksCount()
-        {
-            return _drinks.Count;
-        }
-
         // get all drinkAdditions in menu
-        public List<Addition> GetDrinkAdditions()
+        public List<Addition> GetAdditions()
         {
             return _additions;
         }
@@ -131,6 +125,18 @@ namespace EzDrink
         public List<Order> GetOrders()
         {
             return _orders;
+        }
+
+        // get how many drinks in menu
+        public int GetDrinksCount()
+        {
+            return _drinks.Count;
+        }
+
+        // get how many additions in menu
+        public int GetAdditionsCount()
+        {
+            return _additions.Count;
         }
 
         // get how many drinks in order list

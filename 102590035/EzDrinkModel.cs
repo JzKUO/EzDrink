@@ -9,7 +9,7 @@ namespace EzDrink
         private List<Order> _orders;
         private List<Orders> _ordersList;
         private List<Addition> _additions;
-        private int _selectedOrderRowIndex;
+        private int _selectedRowIndex;
 
         public EzDrinkModel()
         {
@@ -22,7 +22,7 @@ namespace EzDrink
         private void InitializeOrders()
         {
             _orders = new List<Order>();
-            _selectedOrderRowIndex = 0;
+            _selectedRowIndex = 0;
         }
 
         // Initailize drinks list
@@ -51,14 +51,6 @@ namespace EzDrink
             _additions.Add(addition);
         }
 
-        // remove order from orders
-        public void RemoveOrder(int rowIndex)
-        {
-            Order order = _orders[rowIndex];
-            _orders.Remove(order);
-            Console.WriteLine(_orders.Count);
-        }
-
         // add one order
         public void BuyDrink(int rowIndex)
         {
@@ -68,12 +60,36 @@ namespace EzDrink
             Console.WriteLine(_orders.Count);
         }
 
+        // remove drink
+        public void RemoveDrink(int rowIndex)
+        {
+            Drink drink = _drinks[rowIndex];
+            _drinks.Remove(drink);
+            Console.WriteLine(_drinks.Count);
+        }
+
+        // remove addition
+        public void RemoveAddition(int rowIndex)
+        {
+            Addition addition = _additions[rowIndex];
+            _additions.Remove(addition);
+            Console.WriteLine(_additions.Count);
+        }
+
+        // remove order from orders
+        public void RemoveOrder(int rowIndex)
+        {
+            Order order = _orders[rowIndex];
+            _orders.Remove(order);
+            Console.WriteLine(_orders.Count);
+        }
+
         // change selected order
-        public void ChangeSelectedOrder(int rowIndex)
+        public void ChangeSelectedRow(int rowIndex)
         {
             if (rowIndex >= 0)
             {
-                _selectedOrderRowIndex = rowIndex;
+                _selectedRowIndex = rowIndex;
             }
             //Console.WriteLine(_selectedOrderedDrinkRowIndex + " is be selected!");
         }
@@ -84,9 +100,9 @@ namespace EzDrink
             Addition addition = _additions[rowIndex];
             if (_orders.Count > 0)
             {
-                if (!_orders[_selectedOrderRowIndex].IsAlreadyAddedAddition(addition))
+                if (!_orders[_selectedRowIndex].IsAlreadyAddedAddition(addition))
                 {
-                    _orders[_selectedOrderRowIndex].AddAddition(addition);
+                    _orders[_selectedRowIndex].AddAddition(addition);
                 }
             }
         }
@@ -96,7 +112,7 @@ namespace EzDrink
         {
             if (_orders.Count > 0)
             {
-                _orders[_selectedOrderRowIndex].SetSugar(sugar);
+                _orders[_selectedRowIndex].SetSugar(sugar);
             }
         }
 
@@ -105,7 +121,7 @@ namespace EzDrink
         {
             if (_orders.Count > 0)
             {
-                _orders[_selectedOrderRowIndex].SetIceLevel(iceLevel);
+                _orders[_selectedRowIndex].SetIceLevel(iceLevel);
             }
         }
 

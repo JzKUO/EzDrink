@@ -280,7 +280,7 @@ namespace EzDrink
             this._additionsMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this._additionsMenu.Size = new System.Drawing.Size(248, 253);
             this._additionsMenu.TabIndex = 0;
-            this._additionsMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDrinkAdditionsMenuCell);
+            this._additionsMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickAdditionsMenuCell);
             // 
             // _additionButton
             // 
@@ -621,6 +621,7 @@ namespace EzDrink
             this._backEndAdditionManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this._backEndAdditionManagement.Size = new System.Drawing.Size(348, 478);
             this._backEndAdditionManagement.TabIndex = 0;
+            this._backEndAdditionManagement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickBackEndAdditionManagementCell);
             // 
             // _backEndDeleteAdditionButton
             // 
@@ -673,6 +674,7 @@ namespace EzDrink
             this._backEndDrinkManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this._backEndDrinkManagement.Size = new System.Drawing.Size(313, 478);
             this._backEndDrinkManagement.TabIndex = 0;
+            this._backEndDrinkManagement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickBackEndDrinkManagementCell);
             // 
             // _backEndDeleteDrinkButton
             // 

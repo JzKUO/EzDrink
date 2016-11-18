@@ -316,7 +316,6 @@ namespace EzDrink
             // 
             this._orders.AllowUserToAddRows = false;
             this._orders.AllowUserToDeleteRows = false;
-            this._orders.AllowUserToResizeColumns = false;
             this._orders.AllowUserToResizeRows = false;
             this._orders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._orders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;

@@ -105,7 +105,8 @@ namespace EzDrink
         {
             ClearOrdersView();
             ProduceOrdersView();
-            if(_ezDrinkModel.GetOrdersCount() > 0)
+            _orders.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            if (_ezDrinkModel.GetOrdersCount() > 0)
             {
                 _orders.CurrentCell = _orders.Rows[index].Cells[0];
                 _orders.Rows[index].Selected = true;
@@ -133,7 +134,9 @@ namespace EzDrink
         {
             ClearDrinksMenuView();
             ProduceDrinksMenuView();
-            if(_ezDrinkModel.GetDrinksCount() > 0)
+            _backEndDrinkManagement.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            _drinksMenu.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            if (_ezDrinkModel.GetDrinksCount() > 0)
             {
                 _backEndDrinkManagement.CurrentCell = _backEndDrinkManagement.Rows[index].Cells[0];
                 _backEndDrinkManagement.Rows[index].Selected = true;
@@ -165,6 +168,8 @@ namespace EzDrink
         {
             ClearAdditionsView();
             ProduceAdditionsView();
+            _backEndAdditionManagement.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            _additionsMenu.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             if (_ezDrinkModel.GetAdditionsCount() > 0)
             {
                 _backEndAdditionManagement.CurrentCell = _backEndAdditionManagement.Rows[index].Cells[0];
@@ -318,6 +323,7 @@ namespace EzDrink
             }
         }
 
+        // click BackEndAdditionManagement handler
         private void ClickBackEndAdditionManagementCell(object sender, DataGridViewCellEventArgs e)
         {
             if (IsValidRow(e.RowIndex))

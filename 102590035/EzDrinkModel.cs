@@ -6,8 +6,7 @@ namespace EzDrink
     public class EzDrinkModel
     {
         private List<Drink> _drinks;
-        private List<Order> _orders;
-        private List<Orders> _ordersList;
+        private Orders _orders;
         private List<Addition> _additions;
         private int _selectedRowIndex;
 
@@ -21,7 +20,7 @@ namespace EzDrink
         // Initialize orders list
         private void InitializeOrders()
         {
-            _orders = new List<Order>();
+            _orders = new Orders();
             _selectedRowIndex = 0;
         }
 
@@ -138,9 +137,9 @@ namespace EzDrink
         }
 
         // get all drinks in order
-        public List<Order> GetOrders()
+        public Order[] GetOrders()
         {
-            return _orders;
+            return _orders.GetList();
         }
 
         // get how many drinks in menu

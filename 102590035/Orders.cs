@@ -1,25 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EzDrink
 {
-    class Orders
+    internal class Orders
     {
-        private List<Order> _orders;
-
-        // initial orders
-        public Orders()
+        List<Order> _orders;
+        
+        public int Count
         {
-            _orders = new List<Order>();
+            get
+            {
+                return _orders.Count;
+            }
         }
 
-        // get orders
-        public List<Order> GetOrders()
+        public Orders()
         {
-            return _orders;
+            this._orders = new List<Order>();
+        }
+
+        internal void Add(Order order)
+        {
+            this._orders.Add(order);
+        }
+
+        internal void Remove(Order order)
+        {
+            this._orders.Remove(order);
+        }
+
+        public Order this[int key]
+        {
+            get
+            {
+                return _orders[key];
+            }
+            set
+            {
+                _orders[key] = value;
+            }
+        }
+
+        internal Order[] GetList()
+        {
+            return _orders.ToArray();
         }
     }
 }

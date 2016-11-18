@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="OrdersList.cs" />
     <Compile Include="PresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

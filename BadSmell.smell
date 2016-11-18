@@ -188,13 +188,13 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>Literal constants(字面常數)-" is be selected!"</SmellType>
-              <HashCode>LiteralConstants.ChangeSelectedOrder." is be selected!"</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
+              <SmellType>Large class(過大類別)</SmellType>
+              <HashCode>LargeClass.EzDrink.EzDrinkForm.293</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>293</Weight>
               <Project>EzDrink</Project>
-              <File>EzDrinkModel.cs</File>
-              <Line>79</Line>
+              <File>EzDrinkForm.cs</File>
+              <Line>14</Line>
               <Comment />
               <Auto>false</Auto>
             </Smell>
@@ -206,7 +206,67 @@
               <Weight>1</Weight>
               <Project>EzDrink</Project>
               <File>Order.cs</File>
-              <Line>74</Line>
+              <Line>66</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Literal constants(字面常數)-"Error Detected in Input"</SmellType>
+              <HashCode>LiteralConstants.IsValidInput."Error Detected in Input"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>PresentationModel.cs</File>
+              <Line>17</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Literal constants(字面常數)-"Price value must larger than 0 or equal to 0"</SmellType>
+              <HashCode>LiteralConstants.IsValidInput."Price value must larger than 0 or equal to 0"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>PresentationModel.cs</File>
+              <Line>24</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Literal constants(字面常數)-"Price must be number"</SmellType>
+              <HashCode>LiteralConstants.IsValidInput."Price must be number"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>PresentationModel.cs</File>
+              <Line>35</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Literal constants(字面常數)-"Name and Price input value can't be blank"</SmellType>
+              <HashCode>LiteralConstants.IsValidInput."Name and Price input value can't be blank"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>EzDrink</Project>
+              <File>PresentationModel.cs</File>
+              <Line>42</Line>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Long method(過長函式)</SmellType>
+              <HashCode>LongMethod.PresentationModel.IsValidInput.34string name;string price;</HashCode>
+              <Severity>Red</Severity>
+              <Weight>34</Weight>
+              <Project>EzDrink</Project>
+              <File>PresentationModel.cs</File>
+              <Line>13</Line>
               <Comment />
               <Auto>false</Auto>
             </Smell>
@@ -217,12 +277,12 @@
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
-                <RelativePath>Drink.cs</RelativePath>
+                <RelativePath>Addition.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>DrinkAddition.cs</RelativePath>
+                <RelativePath>Drink.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -257,6 +317,16 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Orders.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>OrdersList.cs</RelativePath>
+                <ProjectName>EzDrink</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>PresentationModel.cs</RelativePath>
                 <ProjectName>EzDrink</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -283,7 +353,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1680</ProductionLoc>
+          <ProductionLoc>1884</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

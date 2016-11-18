@@ -12,14 +12,14 @@ namespace EzDrink
         // check is valid input
         public bool IsValidInput(string name, string price)
         {
-            int parsePrice = 0;
+            int realPrice = 0;
             string message;
             string caption = "Error Detected in Input";
             if (name != "" && price != "")
             {
-                if (int.TryParse(price, out parsePrice))
+                if (int.TryParse(price, out realPrice))
                 {
-                    if (parsePrice < 0)
+                    if (realPrice < 0)
                     {
                         message = "Price value must larger than 0 or equal to 0";
                         MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
